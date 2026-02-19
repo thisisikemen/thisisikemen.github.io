@@ -3,24 +3,260 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="thisisikemen のアプリ サポート/プライバシーポリシー等の案内ページ" />
   <title>Developer Site - thisisikemen</title>
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.10);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --line: rgba(255,255,255,.14);
+      --accent: #6ea8ff;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 10% 0%, rgba(110,168,255,.20), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(110,168,255,.12), transparent 55%),
+        var(--bg);
+      line-height: 1.65;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap { max-width: 980px; margin: 0 auto; padding: 28px 18px 40px; }
+
+    header {
+      padding: 18px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+    }
+
+    .title {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 12px;
+      margin: 0 0 6px;
+    }
+    .title h1 {
+      font-size: 22px;
+      margin: 0;
+      letter-spacing: .2px;
+    }
+    .title .sub {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .desc { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .card {
+      grid-column: span 12;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      padding: 16px;
+    }
+
+    @media (min-width: 860px) {
+      .card.half { grid-column: span 6; }
+      .card.third { grid-column: span 4; }
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+    .card p { margin: 0 0 10px; color: var(--muted); font-size: 14px; }
+
+    .links {
+      display: grid;
+      gap: 10px;
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .linkRow {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+    }
+    .linkRow:hover {
+      background: rgba(255,255,255,.07);
+      border-color: rgba(110,168,255,.35);
+    }
+
+    .linkRow .label {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+    .linkRow .label strong {
+      font-size: 14px;
+      color: var(--text);
+      font-weight: 650;
+    }
+    .linkRow .label span {
+      font-size: 12px;
+      color: var(--muted);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 100%;
+    }
+
+    .badge {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    footer {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+      opacity: .9;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 12px;
+      color: rgba(255,255,255,.86);
+      background: rgba(255,255,255,.08);
+      padding: 2px 6px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Developer Site</h1>
-  <p>アプリのサポート / プライバシーポリシー</p>
+  <div class="wrap">
+    <header>
+      <div class="title">
+        <h1>Developer Site</h1>
+        <div class="sub">thisisikemen.github.io</div>
+      </div>
+      <p class="desc">
+        このページは、公開しているアプリの <strong>サポート</strong> / <strong>プライバシーポリシー</strong> などの案内をまとめた「玄関」です。
+      </p>
+    </header>
 
-  <h2>メモるんです</h2>
-  <ul>
-    <li><a href="/support.html">サポート</a></li>
-    <li><a href="/privacy-policy.html">プライバシーポリシー</a></li>
-  </ul>
+    <div class="grid">
+      <!-- メモるんです -->
+      <section class="card half" aria-label="メモるんです">
+        <h2>メモるんです</h2>
+        <p>サポート・プライバシー関連のページはこちら。</p>
 
-  <h2>AdMob</h2>
-  <ul>
-    <li><a href="/app-ads.txt">app-ads.txt</a></li>
-  </ul>
+        <ul class="links">
+          <li>
+            <a class="linkRow" href="support.html">
+              <div class="label">
+                <strong>サポート</strong>
+                <span>support.html</span>
+              </div>
+              <span class="badge">Support</span>
+            </a>
+          </li>
+          <li>
+            <a class="linkRow" href="privacy-policy.html">
+              <div class="label">
+                <strong>プライバシーポリシー</strong>
+                <span>privacy-policy.html</span>
+              </div>
+              <span class="badge">Privacy</span>
+            </a>
+          </li>
+          <li>
+            <a class="linkRow" href="support-camera.html">
+              <div class="label">
+                <strong>サポート（カメラ関連）</strong>
+                <span>support-camera.html</span>
+              </div>
+              <span class="badge">Support</span>
+            </a>
+          </li>
+          <li>
+            <a class="linkRow" href="privacy-policy-camera.html">
+              <div class="label">
+                <strong>プライバシーポリシー（カメラ関連）</strong>
+                <span>privacy-policy-camera.html</span>
+              </div>
+              <span class="badge">Privacy</span>
+            </a>
+          </li>
+        </ul>
+      </section>
 
-  <h2>今後追加するアプリ</h2>
-  <p>例：/apps/&lt;app-id&gt;/support/ と /apps/&lt;app-id&gt;/privacy/ に追加</p>
+      <!-- AdMob -->
+      <section class="card half" aria-label="AdMob">
+        <h2>AdMob / app-ads.txt</h2>
+        <p>
+          AdMob の確認用ファイルです。<strong>ルート直下</strong>に置く必要があるため、ここに残しています。
+        </p>
+
+        <ul class="links">
+          <li>
+            <a class="linkRow" href="app-ads.txt">
+              <div class="label">
+                <strong>app-ads.txt</strong>
+                <span>app-ads.txt（テキストファイル）</span>
+              </div>
+              <span class="badge">Required</span>
+            </a>
+          </li>
+        </ul>
+
+        <p style="margin-top:12px;">
+          参考：今後アプリが増えたら、このサイト自体はそのまま使い回してOK。新しいアプリのページは
+          <code>/apps/&lt;app-id&gt;/</code>
+          配下に置く想定。
+        </p>
+      </section>
+
+      <!-- 今後の追加（枠だけ） -->
+      <section class="card" aria-label="今後追加するアプリ">
+        <h2>今後追加するアプリ（準備）</h2>
+        <p>
+          新しいアプリを出すたびに、この下にリンクを増やしていく運用にします。<br />
+          例：<code>apps/my-new-app/support.html</code> と <code>apps/my-new-app/privacy.html</code>
+        </p>
+      </section>
+    </div>
+
+    <footer>
+      © thisisikemen / Developer Site
+    </footer>
+  </div>
 </body>
 </html>
