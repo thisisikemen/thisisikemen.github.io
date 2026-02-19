@@ -3,186 +3,168 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="thisisikemen のアプリ サポート/プライバシーポリシー等の案内ページ" />
-  <meta name="theme-color" content="#0b0f19" />
   <title>Developer Site - thisisikemen</title>
-
+  <meta name="description" content="thisisikemen のアプリ サポート / プライバシーポリシー一覧" />
   <style>
     :root{
-      --bg:#0b0f19;
-      --panel:rgba(255,255,255,.06);
-      --panel2:rgba(255,255,255,.10);
-      --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.70);
-      --line:rgba(255,255,255,.14);
-      --accent:#6ea8ff;
-      --radius:14px;
+      --bg:#0b0f17;
+      --card:#121a2a;
+      --text:#e9eefc;
+      --muted:#aab4cf;
+      --line:rgba(255,255,255,.10);
+      --accent:#4aa3ff;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f6f7fb;
+        --card:#ffffff;
+        --text:#0c1220;
+        --muted:#5d6475;
+        --line:rgba(0,0,0,.10);
+        --accent:#0066ff;
+        --shadow: 0 10px 30px rgba(0,0,0,.10);
+      }
     }
 
     *{ box-sizing:border-box; }
-    html,body{ height:100%; }
     body{
       margin:0;
-      font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Hiragino Sans","Noto Sans JP","Yu Gothic",Arial,sans-serif;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", "Hiragino Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(74,163,255,.18), transparent 55%),
+                  radial-gradient(1000px 500px at 80% 10%, rgba(110,231,183,.14), transparent 55%),
+                  var(--bg);
       color:var(--text);
-      background:
-        radial-gradient(1200px 600px at 10% 0%, rgba(110,168,255,.20), transparent 60%),
-        radial-gradient(900px 500px at 90% 10%, rgba(110,168,255,.12), transparent 55%),
-        var(--bg);
-      line-height:1.7;
-      -webkit-text-size-adjust:100%;
+      line-height:1.6;
     }
-
     a{ color:var(--accent); text-decoration:none; }
     a:hover{ text-decoration:underline; }
 
     .wrap{
-      max-width:980px;
-      margin:0 auto;
-      padding:clamp(18px, 3vw, 28px) clamp(14px, 2.2vw, 18px) 40px;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 28px 16px 60px;
     }
-
     header{
-      padding:clamp(14px, 2.2vw, 18px);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.05));
+      padding: 18px 0 10px;
     }
-
     .title{
-      display:flex;
-      flex-wrap:wrap;
-      align-items:baseline;
-      gap:10px;
-      margin:0 0 6px;
+      font-size: clamp(22px, 3.2vw, 34px);
+      margin: 0 0 6px;
+      letter-spacing: .2px;
     }
-    .title h1{
-      margin:0;
-      font-size:clamp(18px, 2.2vw, 22px);
-      letter-spacing:.2px;
-    }
-    .title .sub{
-      font-size:12px;
-      color:var(--muted);
+    .sub{
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(14px, 1.7vw, 16px);
     }
 
-    .desc{
-      margin:8px 0 0;
-      color:var(--muted);
-      font-size:clamp(13px, 1.7vw, 14px);
-    }
-
-    /* ✅ レスポンシブの肝：画面幅に応じて 1列⇄2列⇄3列で自然に並ぶ */
     .grid{
-      display:grid;
-      gap:14px;
-      margin-top:16px;
-      grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
     }
-
     .card{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:var(--panel);
-      padding:clamp(14px, 2.2vw, 16px);
-      min-width:0; /* ✅ 折り返し・はみ出し対策 */
+      grid-column: span 12;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .card-inner{
+      padding: 16px;
+    }
+    .card h2{
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+    .meta{
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 14px;
     }
 
-    .card h2{
-      margin:0 0 10px;
-      font-size:clamp(15px, 1.9vw, 16px);
-      letter-spacing:.2px;
+    .app-row{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      margin-bottom: 12px;
     }
-    .card p{
-      margin:0 0 10px;
-      color:var(--muted);
-      font-size:clamp(13px, 1.7vw, 14px);
+    .app-icon{
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      flex: 0 0 auto;
+    }
+    .app-icon img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .app-name{
+      font-weight: 700;
+      margin: 0;
+      font-size: 16px;
+    }
+    .app-note{
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 13px;
     }
 
     .links{
-      display:grid;
-      gap:10px;
-      margin:12px 0 0;
-      padding:0;
-      list-style:none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
     }
-
-    .linkRow{
+    .linkbtn{
       display:flex;
-      justify-content:space-between;
       align-items:center;
-      gap:10px;
-      padding:12px 12px; /* ✅ 指で押しやすい */
-      border-radius:12px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.05);
+      justify-content:space-between;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      text-decoration:none;
     }
-    .linkRow:hover{
-      background:rgba(255,255,255,.07);
-      border-color:rgba(110,168,255,.35);
+    .linkbtn:hover{
+      background: rgba(255,255,255,.06);
+      text-decoration:none;
     }
-    .linkRow:active{
-      transform:translateY(1px);
-    }
-
-    .label{
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-      min-width:0;
-    }
-    .label strong{
-      font-size:14px;
-      color:var(--text);
-      font-weight:650;
-    }
-    .label span{
-      font-size:12px;
-      color:var(--muted);
-      overflow:hidden;
-      text-overflow:ellipsis;
-      white-space:nowrap;
-      max-width:100%;
+    .linkbtn small{
+      color: var(--muted);
+      font-size: 12px;
     }
 
-    /* ✅ 画面が狭いときはパス文字列を折り返す（はみ出し防止） */
-    @media (max-width: 420px){
-      .label span{
-        white-space:normal;
-        word-break:break-all;
-      }
+    .two{
+      grid-column: span 12;
     }
 
-    .badge{
-      font-size:12px;
-      padding:4px 10px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.06);
-      color:var(--muted);
-      flex-shrink:0;
-    }
-
-    code{
-      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
-      font-size:12px;
-      color:rgba(255,255,255,.86);
-      background:rgba(255,255,255,.08);
-      padding:2px 6px;
-      border-radius:8px;
-      border:1px solid var(--line);
+    @media (min-width: 720px){
+      .two{ grid-column: span 6; }
+      .links{ grid-template-columns: 1fr; }
     }
 
     footer{
-      margin-top:18px;
-      color:var(--muted);
-      font-size:12px;
-      text-align:center;
-      opacity:.9;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
     }
-
-    @media (prefers-reduced-motion: reduce){
-      .linkRow:active{ transform:none; }
+    code{
+      background: rgba(255,255,255,.08);
+      border: 1px solid var(--line);
+      padding: 2px 6px;
+      border-radius: 8px;
     }
   </style>
 </head>
@@ -190,74 +172,70 @@
 <body>
   <div class="wrap">
     <header>
-      <div class="title">
-        <h1>Developer Site</h1>
-        <div class="sub">thisisikemen.github.io</div>
-      </div>
-      <p class="desc">
-        このページは、公開しているアプリの <strong>サポート</strong> / <strong>プライバシーポリシー</strong> などをまとめた「玄関」です。
-      </p>
+      <h1 class="title">Developer Site</h1>
+      <p class="sub">アプリのサポート / プライバシーポリシー / AdMob(app-ads.txt) まとめ</p>
     </header>
 
     <div class="grid">
       <!-- メモるんです -->
-      <section class="card" aria-label="メモるんです">
-        <h2>メモるんです</h2>
-        <p>サポート・プライバシー関連のページはこちら。</p>
-        <ul class="links">
-          <li>
-            <a class="linkRow" href="support.html">
-              <div class="label">
-                <strong>サポート</strong>
-                <span>support.html</span>
-              </div>
-              <span class="badge">Support</span>
+      <section class="card two" aria-label="メモるんです">
+        <div class="card-inner">
+          <div class="app-row">
+            <div class="app-icon" aria-hidden="true">
+              <img src="memorundesuiconblue.png.001.png" alt="">
+            </div>
+            <div>
+              <p class="app-name">メモるんです</p>
+              <p class="app-note">サポート / プライバシーポリシー</p>
+            </div>
+          </div>
+
+          <div class="links">
+            <a class="linkbtn" href="/support.html">
+              <span>サポート</span>
+              <small>support.html</small>
             </a>
-          </li>
-          <li>
-            <a class="linkRow" href="privacy-policy.html">
-              <div class="label">
-                <strong>プライバシーポリシー</strong>
-                <span>privacy-policy.html</span>
-              </div>
-              <span class="badge">Privacy</span>
+            <a class="linkbtn" href="/privacy-policy.html">
+              <span>プライバシーポリシー</span>
+              <small>privacy-policy.html</small>
             </a>
-          </li>
-        </ul>
+          </div>
+        </div>
       </section>
 
       <!-- AdMob -->
-      <section class="card" aria-label="AdMob">
-        <h2>AdMob / app-ads.txt</h2>
-        <p>
-          AdMob の確認用ファイルです。<strong>ルート直下</strong>に置く必要があるため、ここに残します。
-        </p>
-        <ul class="links">
-          <li>
-            <a class="linkRow" href="app-ads.txt">
-              <div class="label">
-                <strong>app-ads.txt</strong>
-                <span>app-ads.txt（テキストファイル）</span>
-              </div>
-              <span class="badge">Required</span>
+      <section class="card two" aria-label="AdMob">
+        <div class="card-inner">
+          <h2>AdMob</h2>
+          <p class="meta">app-ads.txt はドメイン直下に置きます（このサイトのルート）。</p>
+
+          <div class="links">
+            <a class="linkbtn" href="/app-ads.txt">
+              <span>app-ads.txt</span>
+              <small>app-ads.txt</small>
             </a>
-          </li>
-        </ul>
+          </div>
+        </div>
       </section>
 
-      <!-- 今後追加するアプリ -->
+      <!-- 今後の追加 -->
       <section class="card" aria-label="今後追加するアプリ">
-        <h2>今後追加するアプリ（運用ルール）</h2>
-        <p>
-          新しいアプリを出すたびに、<code>/apps/&lt;app-id&gt;/</code> 配下にページを追加して、
-          この玄関（index）からリンクを増やす運用にします。<br />
-          例：<code>apps/my-new-app/support.html</code> と <code>apps/my-new-app/privacy.html</code>
-        </p>
+        <div class="card-inner">
+          <h2>今後追加するアプリ（テンプレ）</h2>
+          <p class="meta">
+            新しいアプリは <code>/apps/&lt;app-id&gt;/support/</code> と <code>/apps/&lt;app-id&gt;/privacy/</code> に置く想定。
+            （この index にリンクを追加していく）
+          </p>
+          <p class="meta">
+            例：<code>/apps/my-new-app/support/</code>（= apps/my-new-app/support/index.html）<br>
+            例：<code>/apps/my-new-app/privacy/</code>（= apps/my-new-app/privacy/index.html）
+          </p>
+        </div>
       </section>
     </div>
 
     <footer>
-      © thisisikemen / Developer Site
+      <p>© thisisikemen</p>
     </footer>
   </div>
 </body>
