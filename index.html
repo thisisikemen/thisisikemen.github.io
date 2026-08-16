@@ -3,83 +3,73 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>thisisikemen</title>
-<meta name="description" content="thisisikemen がつくったアプリとゲームの一覧。">
-<meta property="og:title" content="thisisikemen">
-<meta property="og:description" content="thisisikemen がつくったアプリとゲームの一覧。">
+<title>つくったもの</title>
+<meta name="description" content="ひとりで作っているアプリとゲームの置き場です。ちりつも／ゾンビタイピング／メモるんです。">
+<meta property="og:title" content="つくったもの">
+<meta property="og:description" content="ひとりで作っているアプリとゲームの置き場です。">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 <div class="shell">
 
-  <header class="masthead">
-    <p class="eyebrow">Works</p>
-    <h1 class="display masthead__name">thisisikemen</h1>
-    <p class="masthead__lede">
-      ひとりで、つくっています。日々のなかで自分がほしいと思ったものだけを、
-      納得のいくところまで削ってから出しています。
+  <header class="top">
+    <h1>つくったもの</h1>
+    <p>
+      ひとりで作っています。むずかしい設定はいりません。
+      入れたその日から、なんとなく使えるものを目指しています。
     </p>
   </header>
 
-  <main>
-    <ul class="works">
+  <main class="cards">
 
-      <li class="work">
-        <a class="work__link" href="/chiritsumo/">
-          <span class="work__index">01</span>
-          <h2 class="work__title">ちりつも</h2>
-          <p class="work__meta">iOS · 家計簿 · 2026</p>
-          <p class="work__note">
-            レシートを撮るだけ。AIが品目まで読み取って、「何を・どこで・何回買ったか」を
-            言葉でまとめます。小さな出費が1年でいくらになるのかが分かります。
-          </p>
-        </a>
-      </li>
+    <a class="card card--wide" href="/chiritsumo/">
+      <span class="card__tag">iPhoneアプリ・家計簿</span>
+      <h2>ちりつも</h2>
+      <p>
+        レシートを撮るだけ。AIが品目まで読み取って、家計簿にします。
+        「食パンを今月4回」みたいなことまで分かります。
+      </p>
+      <p class="card__go">くわしく見る →</p>
+      <div class="card__shot">
+        <img src="/assets/img/chiri-graph.jpg" alt="ちりつもの月レポート画面" loading="lazy">
+      </div>
+    </a>
 
-      <li class="work">
-        <a class="work__link" href="/zombie-typing/">
-          <span class="work__index">02</span>
-          <h2 class="work__title">ゾンビタイピング</h2>
-          <p class="work__meta">Web · ゲーム · 2026</p>
-          <p class="work__note">
-            ブラウザで遊べる日本語タイピングゲーム。押し寄せるゾンビを、
-            打ち切ることでしのぎます。自己ベストと戦うモードつき。
-          </p>
-        </a>
-      </li>
+    <a class="card" href="/zombie/">
+      <span class="card__tag">ブラウザゲーム</span>
+      <h2>ゾンビタイピング</h2>
+      <p>
+        押し寄せるゾンビを、打って倒すタイピングゲーム。
+        インストールなしで、いますぐ遊べます。
+      </p>
+      <p class="card__go">くわしく見る →</p>
+      <div class="card__shot">
+        <img src="/assets/img/zombie-1.jpg" alt="ゾンビタイピングのタイトル画面" loading="lazy">
+      </div>
+    </a>
 
-      <li class="work">
-        <a class="work__link" href="/support.html">
-          <span class="work__index">03</span>
-          <h2 class="work__title">メモるんです</h2>
-          <p class="work__meta">iOS · メモ · 2024</p>
-          <p class="work__note">
-            思いついたことを、開いた瞬間に書ける。それだけのメモ帳。
-          </p>
-        </a>
-      </li>
+    <a class="card" href="/memorundesu/">
+      <span class="card__tag">iPhoneアプリ・メモ</span>
+      <h2>メモるんです</h2>
+      <p>
+        開いた瞬間に書ける、それだけのメモ帳。
+        文字数を数えたり、そのままコピーしたりできます。
+      </p>
+      <p class="card__go">くわしく見る →</p>
+      <div class="card__shot">
+        <img src="/assets/img/memo-1.jpg" alt="メモるんですの画面" loading="lazy">
+      </div>
+    </a>
 
-    </ul>
-
-    <section style="padding:3rem 0 0">
-      <p class="eyebrow">Documents</p>
-      <ul class="links">
-        <li><a href="/chiritsumo/privacy/">ちりつも プライバシーポリシー</a></li>
-        <li><a href="/chiritsumo/terms/">ちりつも 利用規約</a></li>
-        <li><a href="/chiritsumo/support/">ちりつも サポート</a></li>
-        <li><a href="/privacy-policy.html">メモるんです プライバシーポリシー</a></li>
-        <li><a href="/support.html">メモるんです サポート</a></li>
-        <li><a href="/privacy-policy-camera.html">カメラ版 プライバシーポリシー</a></li>
-        <li><a href="/support-camera.html">カメラ版 サポート</a></li>
-        <li><a href="/app-ads.txt">app-ads.txt</a></li>
-      </ul>
-    </section>
   </main>
 
+  <p style="margin-top:2.5rem;color:var(--ink-soft);font-size:.9375rem">
+    お問い合わせ・不具合の報告は、それぞれのページの下にある窓口からどうぞ。
+  </p>
+
   <footer class="foot">
-    <span>© thisisikemen</span>
-    <a href="https://github.com/thisisikemen">GitHub</a>
+    <p>© thisisikemen ・ <a href="https://github.com/thisisikemen">GitHub</a></p>
   </footer>
 
 </div>
