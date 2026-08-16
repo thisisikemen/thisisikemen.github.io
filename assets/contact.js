@@ -12,7 +12,7 @@
 /* ★ここにGoogleフォームのURLを貼ると、全ページがフォームに切り替わる。
       空のままなら、下のメールアドレスが出る。
       （フォームは kawabatakoshiro@gmail.com のアカウントで作ること） */
-const FORM_URL = "";
+const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe5sUGp54AknWcp4vD-0AHGFacikkQ5RBelwEyZx2nKLoZsHQ/viewform";
 
 /* フォームが無いときの連絡先。HTMLに直接書かないことで、機械的な収集を避ける */
 const MAIL_USER = "ikemenkk.1129";
