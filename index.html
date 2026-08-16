@@ -3,27 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>つくったもの</title>
+<title>KKがつくったもの</title>
 <meta name="description" content="ひとりで作っているアプリとゲームの置き場です。ちりつも／ゾンビタイピング／メモるんです。">
-<meta property="og:title" content="つくったもの">
+<meta name="color-scheme" content="light">
+<meta property="og:title" content="KKがつくったもの">
 <meta property="og:description" content="ひとりで作っているアプリとゲームの置き場です。">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
+
+<header class="top">
+  <h1>KKがつくったもの</h1>
+  <p>
+    ひとりで作っています。むずかしい設定はいりません。
+    入れたその日から、なんとなく使えるものを目指しています。
+  </p>
+</header>
+
 <div class="shell">
-
-  <header class="top">
-    <h1>つくったもの</h1>
-    <p>
-      ひとりで作っています。むずかしい設定はいりません。
-      入れたその日から、なんとなく使えるものを目指しています。
-    </p>
-  </header>
-
   <main class="cards">
 
-    <a class="card card--wide" href="/chiritsumo/">
+    <a class="card card--wide" href="/chiritsumo/"
+       style="--tone:var(--chiri);--tone-tint:var(--chiri-tint);--tone-deep:#b06f00">
       <span class="card__tag">iPhoneアプリ・家計簿</span>
       <h2>ちりつも</h2>
       <p>
@@ -36,7 +38,8 @@
       </div>
     </a>
 
-    <a class="card" href="/zombie/">
+    <a class="card" href="/zombie/"
+       style="--tone:var(--zombie);--tone-tint:var(--zombie-tint);--tone-deep:#a52f1f">
       <span class="card__tag">ブラウザゲーム</span>
       <h2>ゾンビタイピング</h2>
       <p>
@@ -44,12 +47,13 @@
         インストールなしで、いますぐ遊べます。
       </p>
       <p class="card__go">くわしく見る →</p>
-      <div class="card__shot">
+      <div class="card__shot card__shot--wide">
         <img src="/assets/img/zombie-1.jpg" alt="ゾンビタイピングのタイトル画面" loading="lazy">
       </div>
     </a>
 
-    <a class="card" href="/memorundesu/">
+    <a class="card" href="/memorundesu/"
+       style="--tone:var(--memo);--tone-tint:var(--memo-tint);--tone-deep:#2a5fc0">
       <span class="card__tag">iPhoneアプリ・メモ</span>
       <h2>メモるんです</h2>
       <p>
@@ -64,14 +68,13 @@
 
   </main>
 
-  <p style="margin-top:2.5rem;color:var(--ink-soft);font-size:.9375rem">
-    お問い合わせ・不具合の報告は、それぞれのページの下にある窓口からどうぞ。
+  <p style="margin-top:2.5rem;color:var(--ink-soft);font-size:.9375rem;text-align:center">
+    お問い合わせ・不具合の報告は、それぞれのページの下からどうぞ。
   </p>
 
   <footer class="foot">
-    <p>© thisisikemen ・ <a href="https://github.com/thisisikemen">GitHub</a></p>
+    <p>© thisisikemen ・ <a href="https://github.com/thisisikemen" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
-
 </div>
 </body>
 </html>

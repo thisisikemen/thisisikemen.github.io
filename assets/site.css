@@ -1,40 +1,41 @@
-/* つくったもの — 共通スタイル
+/* KKがつくったもの — 共通スタイル
  *
- * 方針（2026-08-16 に作り直し）:
- *  ・かたい編集物ふうをやめて、ゆるく・読みやすく
- *  ・字は大きめ、行間広め、余白多め。小さい字に情報を詰めない
- *  ・色はクリーム地に黒文字＋アプリごとの差し色
- *  ・ハンドルネーム（thisisikemen）は見出しに出さない。URLとメールの中だけ
+ * 方針（2026-08-16）:
+ *  ・明るい配色で固定する。端末のダークモードには合わせない
+ *    （アプリのスクリーンショットが明るいので、地が暗いと浮いてしまう）
+ *  ・地の色はライムグリーン。サイト全体の「顔」はこの1色
+ *  ・そのうえで、作品ごとに色を1つ割り当てる。色＝どの作品か、を意味させる
+ *    （アプリの中でカテゴリごとに色を固定しているのと同じ考え方）
+ *      ちりつも … 黄  ／ ゾンビタイピング … 赤  ／ メモるんです … 青
+ *  ・スクリーンショットは切り取らない。全部見えるように置く
  */
 
 :root {
-  --bg: #fffaf2;
-  --bg-2: #fff4e4;
+  --lime: #7cbf1f;
+  --lime-deep: #5e9612;
+  --lime-tint: #f2f9e4;
+  --lime-band: #eaf5d6;
+
+  --bg: #fdfdfa;
   --card: #ffffff;
-  --ink: #2b2622;
-  --ink-soft: #6a635c;
-  --ink-faint: #9a938a;
-  --line: #eee3d3;
-  --accent: #ff8b3d;
+  --ink: #23271d;
+  --ink-soft: #5f6656;
+  --ink-faint: #909685;
+  --line: #e6e9dd;
+
+  /* 作品ごとの色 */
+  --chiri: #f0a11a;
+  --chiri-tint: #fff5e0;
+  --zombie: #cf3f2c;
+  --zombie-tint: #fdeceb;
+  --memo: #3d7ff0;
+  --memo-tint: #eaf1ff;
 
   --sans: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Yu Gothic", "Noto Sans JP",
           -apple-system, BlinkMacSystemFont, sans-serif;
 
-  --radius: 20px;
-  --shadow: 0 2px 10px rgba(80, 60, 40, .06);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #1a1714;
-    --bg-2: #241f1a;
-    --card: #262019;
-    --ink: #f4eee5;
-    --ink-soft: #bdb4a8;
-    --ink-faint: #8d857a;
-    --line: #3a322a;
-    --shadow: none;
-  }
+  --radius: 22px;
+  --shadow: 0 2px 12px rgba(60, 70, 40, .07);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -46,130 +47,100 @@ body {
   color: var(--ink);
   font-family: var(--sans);
   font-size: 17px;
-  line-height: 2;
-  letter-spacing: .01em;
+  line-height: 1.95;
   -webkit-font-smoothing: antialiased;
 }
 
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 
-.shell {
-  max-width: 56rem;
-  margin: 0 auto;
-  padding: 0 1.25rem 5rem;
-}
+.shell { max-width: 58rem; margin: 0 auto; padding: 0 1.25rem 5rem; }
 
-/* ── うえ ───────────────────────────────── */
+/* ── いちばん上 ─────────────────────────── */
 
 .top {
-  padding: 3.5rem 0 2.5rem;
+  background: var(--lime-band);
+  border-radius: 0 0 32px 32px;
+  padding: 3.5rem 1.5rem 3rem;
   text-align: center;
+  margin-bottom: 2.5rem;
 }
 
-.top h1 {
-  font-size: clamp(2rem, 7vw, 3rem);
-  margin: 0;
-  line-height: 1.4;
-}
+.top h1 { font-size: clamp(1.9rem, 6.5vw, 2.9rem); margin: 0; line-height: 1.45; }
+.top p { max-width: 31rem; margin: .9rem auto 0; color: var(--ink-soft); font-size: 1rem; }
 
-.top p {
-  max-width: 30rem;
-  margin: 1rem auto 0;
-  color: var(--ink-soft);
-  font-size: 1rem;
-}
+/* ── 作品カード ─────────────────────────── */
 
-/* ── カード ─────────────────────────────── */
-
-.cards { display: grid; gap: 1.25rem; }
+.cards { display: grid; gap: 1.5rem; }
 
 .card {
   display: block;
   background: var(--card);
   border: 1px solid var(--line);
+  border-top: 5px solid var(--tone, var(--lime));
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 1.75rem;
   text-decoration: none;
   transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
-a.card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(80, 60, 40, .10);
-}
+a.card:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(60, 70, 40, .12); }
 
 .card__tag {
   display: inline-block;
   font-size: .75rem;
-  line-height: 1.8;
-  padding: 0 .7rem;
+  line-height: 1.9;
+  padding: 0 .8rem;
   border-radius: 999px;
-  background: var(--bg-2);
-  color: var(--ink-soft);
-}
-
-.card h2 {
-  font-size: clamp(1.35rem, 4vw, 1.7rem);
-  margin: .6rem 0 .4rem;
-}
-
-.card p {
-  margin: 0;
-  color: var(--ink-soft);
-  font-size: .9375rem;
-}
-
-.card__go {
-  margin-top: 1rem;
-  color: var(--accent);
+  background: var(--tone-tint, var(--lime-tint));
+  color: var(--tone-deep, var(--lime-deep));
   font-weight: 700;
-  font-size: .9375rem;
 }
 
-/* カードの中の画像は「のぞき見」くらいでいい。
-   端末のスクショは縦に長いので、そのまま置くとカードが画像だけになる */
+.card h2 { font-size: clamp(1.35rem, 4vw, 1.7rem); margin: .6rem 0 .4rem; }
+.card p { margin: 0; color: var(--ink-soft); font-size: .9375rem; }
+
+.card__go { margin-top: .9rem; color: var(--tone, var(--lime-deep)); font-weight: 700; font-size: .9375rem; }
+
+/* スクリーンショットは切り取らない。地の色を敷いて、その上に丸ごと置く */
 .card__shot {
-  margin: 1.25rem 0 0;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: var(--bg-2);
+  margin-top: 1.25rem;
+  border-radius: 16px;
+  background: var(--tone-tint, var(--lime-tint));
+  padding: 1.25rem;
+  display: flex;
+  justify-content: center;
 }
 
 .card__shot img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  object-position: top center;
+  width: auto;
+  max-height: 320px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .10);
 }
 
-.card--wide .card__shot img { height: 300px; }
+/* 横長の画像（ゲーム）は幅いっぱいで */
+.card__shot--wide img { width: 100%; max-height: none; }
 
-/* ── アプリのページ ───────────────────── */
+/* ── 作品ページ ─────────────────────────── */
 
 .hero {
+  background: var(--tone-tint, var(--lime-tint));
+  border-radius: 0 0 32px 32px;
+  padding: 2.75rem 1.5rem 2.5rem;
   text-align: center;
-  padding: 3rem 0 2rem;
+  margin-bottom: 2.5rem;
 }
 
-.hero h1 {
-  font-size: clamp(2rem, 7vw, 3rem);
-  margin: .5rem 0 0;
-}
-
-.hero .lead {
-  max-width: 32rem;
-  margin: 1rem auto 0;
-  color: var(--ink-soft);
-}
+.hero h1 { font-size: clamp(1.9rem, 6.5vw, 2.9rem); margin: .6rem 0 0; }
+.hero .lead { max-width: 32rem; margin: .9rem auto 0; color: var(--ink-soft); }
 
 .shots {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin: 2rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.75rem 1.25rem;
+  margin: 0 0 2.5rem;
 }
 
 .shots figure { margin: 0; }
@@ -177,61 +148,68 @@ a.card:hover {
 .shots img {
   border-radius: 18px;
   border: 1px solid var(--line);
-  background: var(--card);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+  margin: 0 auto;
 }
 
 .shots figcaption {
-  margin-top: .6rem;
+  margin-top: .8rem;
   text-align: center;
   font-size: .875rem;
   color: var(--ink-soft);
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .wide img {
   border-radius: 18px;
   border: 1px solid var(--line);
-  margin: 2rem 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+  margin: 0 auto 2.5rem;
 }
 
-.points { display: grid; gap: 1rem; margin: 2rem 0; }
+.points { display: grid; gap: 1rem; margin: 0 0 2.5rem; }
+
+@media (min-width: 44rem) { .points { grid-template-columns: 1fr 1fr; } }
 
 .point {
   background: var(--card);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 1.25rem 1.5rem;
+  border-left: 4px solid var(--tone, var(--lime));
+  border-radius: 16px;
+  padding: 1.1rem 1.4rem;
 }
 
-.point h3 { margin: 0 0 .3rem; font-size: 1.125rem; }
-.point p { margin: 0; color: var(--ink-soft); font-size: .9375rem; }
+.point h3 { margin: 0 0 .2rem; font-size: 1.0625rem; }
+.point p { margin: 0; color: var(--ink-soft); font-size: .9375rem; line-height: 1.85; }
 
 .cta {
   display: inline-block;
-  margin-top: .5rem;
-  padding: .8rem 2rem;
+  padding: .85rem 2.4rem;
   border-radius: 999px;
-  background: var(--accent);
+  background: var(--tone, var(--lime));
   color: #fff;
   font-weight: 700;
   text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .12);
 }
-.cta:hover { filter: brightness(1.05); }
+.cta:hover { filter: brightness(1.06); }
 
 .note {
-  background: var(--bg-2);
-  border-radius: var(--radius);
+  background: var(--lime-tint);
+  border-radius: 18px;
   padding: 1.25rem 1.5rem;
-  margin: 2rem 0;
+  margin: 0 0 1.75rem;
   font-size: .9375rem;
   color: var(--ink-soft);
+  line-height: 1.9;
 }
+.note strong { color: var(--ink); }
 
 /* ── 読みもの（規約・ポリシー） ─────────── */
 
 .doc { max-width: 40rem; margin: 0 auto; padding: 2.5rem 0 0; }
-.doc h1 { font-size: clamp(1.6rem, 5vw, 2.1rem); margin: 0 0 .5rem; }
-.doc h2 { font-size: 1.25rem; margin: 2.5rem 0 .5rem; }
+.doc h1 { font-size: clamp(1.6rem, 5vw, 2.1rem); margin: .4rem 0 .4rem; }
+.doc h2 { font-size: 1.1875rem; margin: 2.5rem 0 .4rem; padding-left: .7rem; border-left: 4px solid var(--lime); }
 .doc h3 { font-size: 1rem; margin: 1.75rem 0 .3rem; }
 .doc p, .doc li { color: var(--ink-soft); font-size: .9375rem; }
 .doc li { margin: .35rem 0; }
@@ -240,29 +218,21 @@ a.card:hover {
 
 /* ── リンクの並び ─────────────────────── */
 
-.links {
-  display: flex; flex-wrap: wrap; gap: .6rem;
-  margin: 1.5rem 0 0; padding: 0; list-style: none;
-}
+.links { display: flex; flex-wrap: wrap; gap: .6rem; margin: 0; padding: 0; list-style: none; }
+
 .links a {
   display: inline-block;
-  padding: .35rem 1rem;
+  padding: .35rem 1.1rem;
   border-radius: 999px;
   border: 1px solid var(--line);
   background: var(--card);
   font-size: .875rem;
   text-decoration: none;
 }
-.links a:hover { border-color: var(--accent); color: var(--accent); }
+.links a:hover { border-color: var(--lime); color: var(--lime-deep); }
 
-.back {
-  display: inline-block;
-  margin-top: 2.5rem;
-  color: var(--ink-soft);
-  font-size: .9375rem;
-  text-decoration: none;
-}
-.back:hover { color: var(--accent); }
+.back { display: inline-block; margin-top: 2.5rem; color: var(--ink-soft); font-size: .9375rem; text-decoration: none; }
+.back:hover { color: var(--lime-deep); }
 
 .foot {
   margin-top: 3.5rem;
@@ -277,4 +247,5 @@ a.card:hover {
 @media (min-width: 44rem) {
   .cards { grid-template-columns: 1fr 1fr; }
   .cards .card--wide { grid-column: 1 / -1; }
+  .card--wide .card__shot img { max-height: 380px; }
 }
