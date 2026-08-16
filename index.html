@@ -1,242 +1,87 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Developer Site - thisisikemen</title>
-  <meta name="description" content="thisisikemen のアプリ サポート / プライバシーポリシー一覧" />
-  <style>
-    :root{
-      --bg:#0b0f17;
-      --card:#121a2a;
-      --text:#e9eefc;
-      --muted:#aab4cf;
-      --line:rgba(255,255,255,.10);
-      --accent:#4aa3ff;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --radius: 16px;
-    }
-    @media (prefers-color-scheme: light){
-      :root{
-        --bg:#f6f7fb;
-        --card:#ffffff;
-        --text:#0c1220;
-        --muted:#5d6475;
-        --line:rgba(0,0,0,.10);
-        --accent:#0066ff;
-        --shadow: 0 10px 30px rgba(0,0,0,.10);
-      }
-    }
-
-    *{ box-sizing:border-box; }
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", "Hiragino Sans", "Apple Color Emoji", "Segoe UI Emoji";
-      background: radial-gradient(1200px 600px at 20% 0%, rgba(74,163,255,.18), transparent 55%),
-                  radial-gradient(1000px 500px at 80% 10%, rgba(110,231,183,.14), transparent 55%),
-                  var(--bg);
-      color:var(--text);
-      line-height:1.6;
-    }
-    a{ color:var(--accent); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
-
-    .wrap{
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 28px 16px 60px;
-    }
-    header{
-      padding: 18px 0 10px;
-    }
-    .title{
-      font-size: clamp(22px, 3.2vw, 34px);
-      margin: 0 0 6px;
-      letter-spacing: .2px;
-    }
-    .sub{
-      margin: 0;
-      color: var(--muted);
-      font-size: clamp(14px, 1.7vw, 16px);
-    }
-
-    .grid{
-      margin-top: 18px;
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
-    }
-    .card{
-      grid-column: span 12;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-    .card-inner{
-      padding: 16px;
-    }
-    .card h2{
-      margin: 0 0 10px;
-      font-size: 18px;
-    }
-    .meta{
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .app-row{
-      display:flex;
-      align-items:center;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-    .app-icon{
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: rgba(255,255,255,.08);
-      border: 1px solid var(--line);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-      flex: 0 0 auto;
-    }
-    .app-icon img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .app-name{
-      font-weight: 700;
-      margin: 0;
-      font-size: 16px;
-    }
-    .app-note{
-      margin: 2px 0 0;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .links{
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
-    .linkbtn{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding: 12px 14px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      color: var(--text);
-      text-decoration:none;
-    }
-    .linkbtn:hover{
-      background: rgba(255,255,255,.06);
-      text-decoration:none;
-    }
-    .linkbtn small{
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .two{
-      grid-column: span 12;
-    }
-
-    @media (min-width: 720px){
-      .two{ grid-column: span 6; }
-      .links{ grid-template-columns: 1fr; }
-    }
-
-    footer{
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-    code{
-      background: rgba(255,255,255,.08);
-      border: 1px solid var(--line);
-      padding: 2px 6px;
-      border-radius: 8px;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>thisisikemen</title>
+<meta name="description" content="thisisikemen がつくったアプリとゲームの一覧。">
+<meta property="og:title" content="thisisikemen">
+<meta property="og:description" content="thisisikemen がつくったアプリとゲームの一覧。">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/site.css">
 </head>
-
 <body>
-  <div class="wrap">
-    <header>
-      <h1 class="title">Developer Site</h1>
-      <p class="sub">アプリのサポート / プライバシーポリシー / AdMob(app-ads.txt) まとめ</p>
-    </header>
+<div class="shell">
 
-    <div class="grid">
-      <!-- メモるんです -->
-      <section class="card two" aria-label="メモるんです">
-        <div class="card-inner">
-          <div class="app-row">
-            <div class="app-icon" aria-hidden="true">
-              <img src="memorundesuiconblue.png.001.png" alt="">
-            </div>
-            <div>
-              <p class="app-name">メモるんです</p>
-              <p class="app-note">サポート / プライバシーポリシー</p>
-            </div>
-          </div>
+  <header class="masthead">
+    <p class="eyebrow">Works</p>
+    <h1 class="display masthead__name">thisisikemen</h1>
+    <p class="masthead__lede">
+      ひとりで、つくっています。日々のなかで自分がほしいと思ったものだけを、
+      納得のいくところまで削ってから出しています。
+    </p>
+  </header>
 
-          <div class="links">
-            <a class="linkbtn" href="/support.html">
-              <span>サポート</span>
-              <small>support.html</small>
-            </a>
-            <a class="linkbtn" href="/privacy-policy.html">
-              <span>プライバシーポリシー</span>
-              <small>privacy-policy.html</small>
-            </a>
-          </div>
-        </div>
-      </section>
+  <main>
+    <ul class="works">
 
-      <!-- AdMob -->
-      <section class="card two" aria-label="AdMob">
-        <div class="card-inner">
-          <h2>AdMob</h2>
-          <p class="meta">app-ads.txt はドメイン直下に置きます（このサイトのルート）。</p>
-
-          <div class="links">
-            <a class="linkbtn" href="/app-ads.txt">
-              <span>app-ads.txt</span>
-              <small>app-ads.txt</small>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- 今後の追加 -->
-      <section class="card" aria-label="今後追加するアプリ">
-        <div class="card-inner">
-          <h2>今後追加するアプリ（テンプレ）</h2>
-          <p class="meta">
-            新しいアプリは <code>/apps/&lt;app-id&gt;/support/</code> と <code>/apps/&lt;app-id&gt;/privacy/</code> に置く想定。
-            （この index にリンクを追加していく）
+      <li class="work">
+        <a class="work__link" href="/chiritsumo/">
+          <span class="work__index">01</span>
+          <h2 class="work__title">ちりつも</h2>
+          <p class="work__meta">iOS · 家計簿 · 2026</p>
+          <p class="work__note">
+            レシートを撮るだけ。AIが品目まで読み取って、「何を・どこで・何回買ったか」を
+            言葉でまとめます。小さな出費が1年でいくらになるのかが分かります。
           </p>
-          <p class="meta">
-            例：<code>/apps/my-new-app/support/</code>（= apps/my-new-app/support/index.html）<br>
-            例：<code>/apps/my-new-app/privacy/</code>（= apps/my-new-app/privacy/index.html）
-          </p>
-        </div>
-      </section>
-    </div>
+        </a>
+      </li>
 
-    <footer>
-      <p>© thisisikemen</p>
-    </footer>
-  </div>
+      <li class="work">
+        <a class="work__link" href="/zombie-typing/">
+          <span class="work__index">02</span>
+          <h2 class="work__title">ゾンビタイピング</h2>
+          <p class="work__meta">Web · ゲーム · 2026</p>
+          <p class="work__note">
+            ブラウザで遊べる日本語タイピングゲーム。押し寄せるゾンビを、
+            打ち切ることでしのぎます。自己ベストと戦うモードつき。
+          </p>
+        </a>
+      </li>
+
+      <li class="work">
+        <a class="work__link" href="/support.html">
+          <span class="work__index">03</span>
+          <h2 class="work__title">メモるんです</h2>
+          <p class="work__meta">iOS · メモ · 2024</p>
+          <p class="work__note">
+            思いついたことを、開いた瞬間に書ける。それだけのメモ帳。
+          </p>
+        </a>
+      </li>
+
+    </ul>
+
+    <section style="padding:3rem 0 0">
+      <p class="eyebrow">Documents</p>
+      <ul class="links">
+        <li><a href="/chiritsumo/privacy/">ちりつも プライバシーポリシー</a></li>
+        <li><a href="/chiritsumo/terms/">ちりつも 利用規約</a></li>
+        <li><a href="/chiritsumo/support/">ちりつも サポート</a></li>
+        <li><a href="/privacy-policy.html">メモるんです プライバシーポリシー</a></li>
+        <li><a href="/support.html">メモるんです サポート</a></li>
+        <li><a href="/privacy-policy-camera.html">カメラ版 プライバシーポリシー</a></li>
+        <li><a href="/support-camera.html">カメラ版 サポート</a></li>
+        <li><a href="/app-ads.txt">app-ads.txt</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© thisisikemen</span>
+    <a href="https://github.com/thisisikemen">GitHub</a>
+  </footer>
+
+</div>
 </body>
 </html>

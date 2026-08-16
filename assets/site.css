@@ -1,0 +1,280 @@
+/* thisisikemen — 共通スタイル
+ *
+ * 方針:
+ *  ・見出しは明朝。日本語の編集物の顔にすると、テンプレートっぽさが消える
+ *  ・色は紙と墨の2色＋差し色1つだけ。グラデーション・影・角丸カードは使わない
+ *  ・情報は罫線と余白で分ける。囲まない
+ */
+
+:root {
+  --paper: #faf9f6;
+  --paper-2: #f2f0ea;
+  --ink: #17150f;
+  --ink-soft: #55524a;
+  --ink-faint: #8b877c;
+  --rule: #ddd8cc;
+  --accent: #9a3412;
+
+  --serif: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", "Times New Roman", serif;
+  --sans: "Helvetica Neue", Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+  --mono: "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace;
+
+  --measure: 34rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #14130f;
+    --paper-2: #1c1a15;
+    --ink: #eeebe2;
+    --ink-soft: #b4afa2;
+    --ink-faint: #837e72;
+    --rule: #302d26;
+    --accent: #e8845c;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.85;
+  font-feature-settings: "palt" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+::selection { background: var(--accent); color: var(--paper); }
+
+.shell {
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 6rem;
+}
+
+/* ── 見出し ─────────────────────────────── */
+
+.display {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0;
+}
+
+/* ── ヘッダー ─────────────────────────────── */
+
+.masthead {
+  padding: 4.5rem 0 3rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.masthead__name {
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  margin: 0.75rem 0 0;
+}
+
+.masthead__lede {
+  max-width: var(--measure);
+  margin: 1.5rem 0 0;
+  color: var(--ink-soft);
+}
+
+/* ── 作品の一覧 ─────────────────────────── */
+
+.works { margin: 0; padding: 0; list-style: none; }
+
+.work {
+  border-bottom: 1px solid var(--rule);
+}
+
+.work__link {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 0 1.25rem;
+  align-items: baseline;
+  padding: 2.25rem 0;
+  text-decoration: none;
+  transition: padding-left 180ms ease, color 180ms ease;
+}
+
+.work__link:hover,
+.work__link:focus-visible {
+  padding-left: 0.75rem;
+  color: var(--accent);
+  outline: none;
+}
+
+.work__index {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.08em;
+}
+
+.work__title {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3.6vw, 2.125rem);
+  margin: 0;
+  font-weight: 400;
+}
+
+.work__meta {
+  grid-column: 2;
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0.5rem 0 0;
+}
+
+.work__note {
+  grid-column: 2;
+  max-width: var(--measure);
+  margin: 0.75rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+}
+
+.work--soon .work__link { pointer-events: none; }
+.work--soon .work__title { color: var(--ink-faint); }
+
+/* ── 補助リンクの並び ───────────────────── */
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9375rem;
+}
+
+.links a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 2px;
+  transition: border-color 180ms ease, color 180ms ease;
+}
+
+.links a:hover {
+  color: var(--accent);
+  border-color: currentColor;
+}
+
+/* ── 本文（規約・ポリシー） ───────────────── */
+
+.doc {
+  max-width: 42rem;
+  padding: 3.5rem 0 0;
+}
+
+.doc h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.625rem, 4.5vw, 2.25rem);
+  margin: 0.75rem 0 0;
+}
+
+.doc h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.1875rem;
+  margin: 3rem 0 0.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+/* 見出し直後の1つ目は、マストヘッドの罫線とぶつかるので詰める */
+.doc > h2:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.doc h3 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  margin: 2rem 0 0.5rem;
+}
+
+.doc p, .doc li { color: var(--ink-soft); }
+.doc li { margin: 0.4rem 0; }
+.doc ul { padding-left: 1.2rem; }
+.doc strong { color: var(--ink); font-weight: 700; }
+.doc .updated {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-faint);
+  margin-top: 1rem;
+}
+
+/* 未確定の項目。埋める前に公開しないための目印 */
+.todo {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  background: var(--paper-2);
+  border: 1px dashed var(--accent);
+  color: var(--accent);
+  padding: 0.15rem 0.5rem;
+}
+
+/* ── フッター ─────────────────────────────── */
+
+.foot {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.foot a { text-decoration: none; }
+.foot a:hover { color: var(--accent); }
+
+/* ── 戻る導線 ─────────────────────────────── */
+
+.back {
+  display: inline-block;
+  margin-top: 3rem;
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  text-decoration: none;
+}
+.back:hover { color: var(--accent); }
+
+@media (max-width: 40rem) {
+  .work__link { grid-template-columns: 2.5rem 1fr; padding: 1.75rem 0; }
+  .masthead { padding: 3rem 0 2.25rem; }
+}
