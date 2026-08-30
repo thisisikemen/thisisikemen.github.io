@@ -4,43 +4,207 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>メモるんです — 開いた瞬間に書けるメモ帳</title>
-<meta name="description" content="開いた瞬間に書ける、それだけのメモ帳。文字数・コピー・共有がすぐできる iPhone アプリ。">
-<meta property="og:title" content="メモるんです">
-<meta property="og:description" content="開いた瞬間に書ける、それだけのメモ帳。">
-<meta property="og:image" content="/assets/img/memo-1.jpg">
+<meta name="theme-color" content="#3478f7">
+<title>メモるんです — フォルダで整理する、シンプルなメモ帳</title>
+<meta name="description" content="開いた瞬間に書ける、シンプルで美しいメモ帳。フォルダに写真をつけて整理、テーマカラーとアイコンは20種類、文字数の表示・コピー・共有つき。iPhone / iPad 用の無料アプリ。">
+<link rel="canonical" href="https://thisisikemen.github.io/memorundesu/">
+<meta property="og:title" content="メモるんです — フォルダで整理する、シンプルなメモ帳">
+<meta property="og:description" content="開いた瞬間に書ける、シンプルで美しいメモ帳。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thisisikemen.github.io/memorundesu/">
+<meta property="og:image" content="https://thisisikemen.github.io/assets/img/og/memo.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/icon/memo.png">
+<link rel="apple-touch-icon" href="/assets/img/icon/memo.png">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
-<body style="--tone:var(--memo);--tone-tint:var(--memo-tint);--tone-deep:#2a5fc0">
-<header class="hero">
-    <span class="card__tag">iPhoneアプリ・メモ</span>
+<body class="t-memo">
+
+<nav class="nav">
+  <a class="nav__home" href="/"><span class="nav__mark" aria-hidden="true"></span>KKがつくったもの</a>
+  <ul class="nav__list">
+    <li><a href="/chiritsumo/" style="--d:var(--chiri)"><i class="nav__dot"></i><span class="nav__label">ちりつも家計簿</span></a></li>
+    <li><a href="/zombie/" style="--d:var(--zombie)"><i class="nav__dot"></i><span class="nav__label">ゾンビタイピング</span></a></li>
+    <li><a href="/memorundesu/" aria-current="page" style="--d:var(--memo)"><i class="nav__dot"></i><span class="nav__label">メモるんです</span></a></li>
+  </ul>
+  <a class="nav__cta" href="https://apps.apple.com/jp/app/id6648797560" target="_blank" rel="noopener">App Store で入手</a>
+</nav>
+
+<header class="world world--memo">
+  <div class="world__inner">
+    <img class="world__icon" src="/assets/img/icon/memo.png" alt="" width="72" height="72" style="view-transition-name:icon-memo">
     <h1>メモるんです</h1>
-    <p class="lead">
-      開いた瞬間に書ける。<br>
-      それだけのメモ帳です。
+    <p class="world__sub">
+      開いた瞬間に書ける、それだけのメモ帳。<br>
+      <span class="world__hl">フォルダに写真をつけて</span>整理して、
+      <span class="world__hl">20色</span>のなかから自分の色に着替えて使えます。
     </p>
-  </header>
+    <ul class="world__meta">
+      <li>無料</li>
+      <li>iPhone / iPad</li>
+      <li>ダークモード対応</li>
+      <li>App Store ★4.2</li>
+    </ul>
+    <div class="world__act">
+      <a class="appstore" href="https://apps.apple.com/jp/app/id6648797560" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+        <span><small>ダウンロード</small><b>App Store</b></span>
+      </a>
+    </div>
+    <div class="world__stage world__stage--phone">
+      <div class="phone"><img src="/assets/img/memo/themes.jpg" width="620" height="1344" alt="テーマカラーとアイコンの選択画面"></div>
+      <div class="phone"><img src="/assets/img/memo/folders.jpg" width="620" height="1344" alt="フォルダ一覧。写真つきのフォルダが並んでいる" fetchpriority="high"></div>
+      <div class="phone"><img src="/assets/img/memo/edit.jpg" width="620" height="1344" alt="メモの編集画面。右上に文字数・コピー・共有"></div>
+    </div>
+  </div>
+</header>
+
 <div class="shell">
 
-  <div class="shots" style="grid-template-columns:minmax(0,20rem);justify-content:center">
-    <figure>
-      <img src="/assets/img/memo-1.jpg" alt="メモるんですの編集画面。文字数・コピー・共有のボタンが並んでいる" loading="lazy">
-    </figure>
-  </div>
+  <section class="sec rise">
+    <p class="sec__label">かんがえかた</p>
+    <h2>迷うところを、つくらない</h2>
+    <p>
+      メモは、書くまでの時間がいちばん惜しいものです。
+      だから開く・書く・閉じるの3つだけを速くして、そのほかは全部あとまわしにしました。
+    </p>
+    <section class="points">
+      <div class="point">
+        <h3>チャットのように書ける</h3>
+        <p>ひとつのフォルダの中に、思いついた順に並びます。使いかたを覚える必要がありません。</p>
+      </div>
+      <div class="point">
+        <h3>タグも同期設定もない</h3>
+        <p>決めることが多いほど、書きはじめが遅くなります。分けかたはフォルダひとつに絞りました。</p>
+      </div>
+    </section>
+  </section>
 
-  <section class="points">
-    <div class="point">
-      <h3>迷わない</h3>
-      <p>フォルダもタグもありません。開く、書く、閉じる。それだけです。</p>
+  <section class="sec rise">
+    <div class="feature">
+      <div class="phones">
+        <div class="phone"><img src="/assets/img/memo/folders.jpg" width="620" height="1344" alt="フォルダ一覧。買い物リスト・コピーする下書き・授業・サークル・その他" loading="lazy"></div>
+        <div class="phone"><img src="/assets/img/memo/reorder.jpg" width="620" height="1344" alt="編集中のフォルダ一覧。並べかえと削除ができる" loading="lazy"></div>
+      </div>
+      <div>
+        <p class="sec__label">フォルダ</p>
+        <h3>写真をつけると、<br>探さなくてよくなる</h3>
+        <p>
+          フォルダには<em>写真とアイコン</em>を設定できます。
+          「買い物リスト」も「授業」も、名前を読む前に、絵で分かります。名前も写真もあとから変えられます。
+        </p>
+        <ul>
+          <li>フォルダごとにメモをまとめる</li>
+          <li>写真は自分のアルバムから</li>
+          <li>並べかえ・名前の変更はいつでも</li>
+        </ul>
+      </div>
     </div>
-    <div class="point">
-      <h3>文字数がすぐ分かる</h3>
-      <p>書きながら文字数が出ます。ひとことの下書きにも使えます。</p>
+
+    <div class="feature feature--flip">
+      <div class="phones">
+        <div class="phone"><img src="/assets/img/memo/edit.jpg" width="620" height="1344" alt="編集画面。右上に文字数とコピー・共有のボタン" loading="lazy"></div>
+        <div class="phone"><img src="/assets/img/memo/list.jpg" width="620" height="1344" alt="フォルダの中のメモ一覧" loading="lazy"></div>
+      </div>
+      <div>
+        <p class="sec__label">書くところ</p>
+        <h3>文字数・コピー・共有。<br>それ以上は出さない</h3>
+        <p>
+          書きながら<em>文字数</em>が出ます。提出用の下書きや、ひとことの文面をつくるときに効きます。
+          書いたものは<em>1タップでコピー</em>できて、LINEなど他のアプリへそのまま送れます。
+        </p>
+        <ul>
+          <li>書きながら文字数が分かる</li>
+          <li>コピーボタンで、貼り付け先へすぐ</li>
+          <li>共有ボタンで、ほかのアプリへ</li>
+        </ul>
+      </div>
     </div>
-    <div class="point">
-      <h3>そのままコピー・共有</h3>
-      <p>書いたものを1タップでコピーしたり、ほかのアプリへ送れます。</p>
+
+    <div class="feature">
+      <div class="phones">
+        <div class="phone"><img src="/assets/img/memo/themes.jpg" width="620" height="1344" alt="20種類のテーマカラーとアプリアイコン" loading="lazy"></div>
+        <div class="phone"><img src="/assets/img/memo/dark.jpg" width="620" height="1344" alt="ダークモードの編集画面" loading="lazy"></div>
+      </div>
+      <div>
+        <p class="sec__label">着せかえ</p>
+        <h3>20色から、自分の色を</h3>
+        <p>
+          テーマカラーと<em>アプリのアイコン</em>を20種類から選べます。
+          ホーム画面に並べたときに、ほかのアプリとぶつからない色を選べます。
+        </p>
+        <ul>
+          <li>ブルー・レッド・ミント・インディゴ・ワインレッド……</li>
+          <li>アイコンも同じ色に変わる</li>
+          <li>もちろん<em>ダークモード</em>でも読みやすい</li>
+        </ul>
+      </div>
     </div>
+  </section>
+
+</div>
+
+<div class="shell" style="padding-bottom:0">
+  <section class="poster poster--memo rise">
+    <div class="poster__txt">
+      <p class="sec__label">フォルダの顔</p>
+      <h2>あとから、<br>いくらでも直せる</h2>
+      <p>作ったあとで気が変わっても大丈夫です。差し替えても、打ち直しても、中のメモはそのまま残ります。</p>
+      <ul>
+        <li>アルバムの写真を丸く切り取って使う</li>
+        <li>写真を外せば、もとのフォルダの絵にもどる</li>
+        <li>並び順も好きなように</li>
+      </ul>
+    </div>
+    <figure>
+      <img src="/assets/img/memo/store-4.jpg" width="600" height="1300"
+           alt="フォルダに写真を設定可能。写真・名前は変更できます" loading="lazy">
+    </figure>
+  </section>
+</div>
+
+<div class="shell" style="padding-bottom:0">
+  <section class="gallery gallery--memo rise">
+    <div class="gallery__head">
+      <h2>アプリの中を、ひととおり</h2>
+      <p>App Storeに出しているものと同じ画面です</p>
+    </div>
+    <div class="gallery__strip">
+      <button class="shot" type="button" data-zoom><img src="/assets/img/memo/store-1.jpg" width="600" height="1300" alt="シンプルで美しい。直感的なフォルダでスッキリ管理" loading="lazy"></button>
+      <button class="shot" type="button" data-zoom><img src="/assets/img/memo/store-2.jpg" width="600" height="1300" alt="あなた色の直感的メモアプリ。カテゴリー分けで混乱しない" loading="lazy"></button>
+      <button class="shot" type="button" data-zoom><img src="/assets/img/memo/store-3.jpg" width="600" height="1300" alt="文字数・コピー・共有。必要だけを詰め込んだメモアプリ" loading="lazy"></button>
+      <button class="shot" type="button" data-zoom><img src="/assets/img/memo/store-4.jpg" width="600" height="1300" alt="フォルダに写真を設定可能。写真・名前は変更できます" loading="lazy"></button>
+      <button class="shot" type="button" data-zoom><img src="/assets/img/memo/store-5.jpg" width="600" height="1300" alt="アイコンとテーマカラー20種類" loading="lazy"></button>
+      <button class="shot" type="button" data-zoom><img src="/assets/img/memo/store-6.jpg" width="600" height="1300" alt="もちろんダークモードでも" loading="lazy"></button>
+    </div>
+    <p class="gallery__hint">横に流せます／押すと大きくなります</p>
+  </section>
+</div>
+
+<div class="shell">
+
+  <section class="sec rise">
+    <p class="sec__label">アプリの情報</p>
+    <h2>メモるんです</h2>
+    <div class="spec">
+      <dl>
+        <dt>提供</dt><dd>Koshiro Kawabata</dd>
+        <dt>カテゴリ</dt><dd>仕事効率化</dd>
+        <dt>価格</dt><dd>無料</dd>
+        <dt>対応</dt><dd>iPhone / iPad・iOS 17.0以上</dd>
+        <dt>サイズ</dt><dd>約 6.3 MB</dd>
+        <dt>バージョン</dt><dd>1.0.5</dd>
+        <dt>評価</dt><dd>★4.2（6件・2026年8月時点）</dd>
+      </dl>
+    </div>
+    <p class="center" style="margin-top:1.75rem">
+      <a class="appstore" href="https://apps.apple.com/jp/app/id6648797560" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+        <span><small>ダウンロード</small><b>App Store</b></span>
+      </a>
+    </p>
   </section>
 
   <div data-contact></div>
@@ -52,8 +216,18 @@
 
   <a class="back" href="/">← つくったもの</a>
 
-  <footer class="foot"><p>© thisisikemen</p></footer>
+  <footer class="foot">
+    <ul class="foot__links">
+      <li><a href="/">つくったもの</a></li>
+      <li><a href="/chiritsumo/">ちりつも家計簿</a></li>
+      <li><a href="/zombie/">ゾンビタイピング</a></li>
+    </ul>
+    <p>© thisisikemen</p>
+  </footer>
+
 </div>
-<script src="/assets/contact.js"></script>
+
+<script src="/assets/contact.js" defer></script>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

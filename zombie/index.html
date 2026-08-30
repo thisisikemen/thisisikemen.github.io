@@ -4,56 +4,202 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>ゾンビタイピング — ブラウザで遊べる日本語タイピングゲーム</title>
-<meta name="description" content="インストール不要・無料。押し寄せるゾンビを打って倒す日本語タイピングゲーム。">
-<meta property="og:title" content="ゾンビタイピング">
-<meta property="og:description" content="インストール不要・無料。押し寄せるゾンビを打って倒す日本語タイピングゲーム。">
-<meta property="og:image" content="/assets/img/zombie-1.jpg">
+<meta name="theme-color" content="#0d0b14">
+<title>ゾンビタイピング — ブラウザで遊べる無料の日本語タイピングゲーム</title>
+<meta name="description" content="インストール不要・無料。迫りくるゾンビの頭上のことばをローマ字で打ち切って倒す日本語タイピングゲーム。収録1,200語以上、6つの難易度、難易度別のオンラインランキング。">
+<link rel="canonical" href="https://thisisikemen.github.io/zombie/">
+<meta property="og:title" content="ゾンビタイピング — ブラウザで遊べる無料の日本語タイピングゲーム">
+<meta property="og:description" content="タイピングで、夜明けまで生き延びろ。インストール不要・無料。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thisisikemen.github.io/zombie/">
+<meta property="og:image" content="https://thisisikemen.github.io/assets/img/og/zombie.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/icon/zombie.svg">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
-<body style="--tone:var(--zombie);--tone-tint:var(--zombie-tint);--tone-deep:#a52f1f">
-<header class="hero">
-    <span class="card__tag">ブラウザゲーム</span>
+<body class="t-zombie">
+
+<nav class="nav">
+  <a class="nav__home" href="/"><span class="nav__mark" aria-hidden="true"></span>KKがつくったもの</a>
+  <ul class="nav__list">
+    <li><a href="/chiritsumo/" style="--d:var(--chiri)"><i class="nav__dot"></i><span class="nav__label">ちりつも家計簿</span></a></li>
+    <li><a href="/zombie/" aria-current="page" style="--d:var(--zombie)"><i class="nav__dot"></i><span class="nav__label">ゾンビタイピング</span></a></li>
+    <li><a href="/memorundesu/" style="--d:var(--memo)"><i class="nav__dot"></i><span class="nav__label">メモるんです</span></a></li>
+  </ul>
+  <a class="nav__cta" href="/zombie-typing/" target="_blank" rel="noopener">遊んでみる</a>
+</nav>
+
+<header class="world world--zombie">
+  <div class="world__inner">
+    <span class="world__icon world__icon--draw" style="view-transition-name:icon-zombie">
+      <svg viewBox="0 0 64 64" role="img" aria-label="ゾンビタイピング">
+        <rect width="64" height="64" rx="18" fill="#05050f"/>
+        <path d="M10 49h44v6H10z" fill="#ff8a2a"/>
+        <path d="M14 44 42 14H17V8h35v5L24 43h29v6H14z" fill="#e8e4d8"/>
+        <path d="M14 44 42 14h10L24 43h29v6H14z" fill="#b31212" opacity=".35"/>
+      </svg>
+    </span>
     <h1>ゾンビタイピング</h1>
-    <p class="lead">
-      押し寄せるゾンビを、打って倒す。<br>
+    <p class="world__sub">
+      <span class="world__hl">タイピングで、夜明けまで生き延びろ。</span><br>
+      迫りくるゾンビの頭上のことばを、ローマ字で打ち切って撃ち倒す。
       インストールなし、無料、いますぐ。
     </p>
-    <p><a class="cta" href="/zombie-typing/" target="_blank" rel="noopener">遊んでみる</a></p>
-  </header>
+    <ul class="world__meta">
+      <li>ブラウザで動く</li>
+      <li>登録なし・課金なし</li>
+      <li>収録1,200語以上</li>
+      <li>PCキーボード専用</li>
+    </ul>
+    <div class="world__act">
+      <a class="cta" href="/zombie-typing/" target="_blank" rel="noopener">遊んでみる</a>
+      <a class="cta cta--ghost" href="#howto">どんなゲーム？</a>
+    </div>
+    <div class="world__stage world__stage--wide">
+      <img src="/assets/img/zombie/crowd.jpg" width="1440" height="900" alt="ゾンビの群れが迫るゲーム画面。それぞれの頭上に日本語のことばが浮かんでいる" fetchpriority="high">
+    </div>
+  </div>
+</header>
+
 <div class="shell">
 
-  <div class="wide">
-    <img src="/assets/img/zombie-1.jpg" alt="ゾンビタイピングのタイトル画面" loading="lazy">
-  </div>
+  <!-- ── ここで1体だけ ── -->
+  <section class="sec rise" id="try">
+    <p class="sec__label">まず1体</p>
+    <h2>説明より、打ったほうが早い</h2>
+    <p>下の暗がりを押すと、1体だけ出てきます。頭の上のことばを、ローマ字で打ってみてください。</p>
+    <div class="zd" data-zdemo></div>
+    <noscript><p style="font-size:.875rem;color:var(--ink-soft)">お試しはJavaScriptが必要です。本編も同じくブラウザで動きます。</p></noscript>
+  </section>
 
-  <section class="points">
-    <div class="point">
-      <h3>ゾンビの頭の上の言葉を打つ</h3>
-      <p>近づいてくるゾンビの頭上に日本語が出ます。ローマ字で打ち切ると倒せます。それだけです。</p>
+  <!-- ── あそびかた ── -->
+  <section class="sec rise" id="howto">
+    <p class="sec__label">あそびかた</p>
+    <h2>打ち切れば、倒せる</h2>
+    <div class="feature feature--wide">
+      <div class="screen"><img src="/assets/img/zombie/play.jpg" width="1440" height="900" alt="ゾンビの頭上に「ちゃいろ」と表示され、打った分のローマ字が緑に変わっている" loading="lazy"></div>
+      <div>
+        <h3>最初の1打で、狙いが決まる</h3>
+        <p>
+          右から歩いてくるゾンビの頭上に、ことばが出ます。
+          最初の1文字を打った瞬間、そのゾンビにロックオン。
+          打ち切れば撃破、途中でやめても<em>打った分だけ</em>ダメージは軽くなります。
+        </p>
+        <ul>
+          <li>画面に出ることばは、<em>最初の1打が被らない</em>ように選ばれる</li>
+          <li><b>Enter</b> でターゲット解除。進捗は残るので、あとで続きから打てる</li>
+          <li>ノーミスで倒し続けるとコンボ。たまるとボーナスが出る</li>
+        </ul>
+      </div>
     </div>
-    <div class="point">
-      <h3>キーボードの場所も教えてくれる</h3>
-      <p>まだ指が覚えていなくても大丈夫。どのキーを押すのか画面に出るので、見ながら打てます。</p>
+
+    <div class="feature feature--wide feature--flip">
+      <div class="screen"><img src="/assets/img/zombie/basic.jpg" width="1200" height="600" alt="ベーシックの画面。キーボードの図が出て、次に押すキーが光っている" loading="lazy"></div>
+      <div>
+        <h3>指が覚えていなくても、大丈夫</h3>
+        <p>
+          いちばんやさしい<em>ベーシック</em>は、時間無制限の練習場です。
+          五十音からはじまって、画面の下にキーボードの図が出ます。
+          どの指でどのキーを押すのかが光るので、見ながら打てます。
+        </p>
+        <ul>
+          <li>時間無制限。倒されても終わらない</li>
+          <li>五十音 → 短い単語へ、少しずつ</li>
+          <li>ローマ字の表示は設定で消せる</li>
+        </ul>
+      </div>
     </div>
-    <div class="point">
-      <h3>昨日の自分と戦える</h3>
-      <p>自己ベストの打ち方をそのまま再現して、隣で一緒に走ってくれます。競争相手はいつも自分です。</p>
+
+    <div class="feature feature--wide">
+      <div class="screen"><img src="/assets/img/zombie/modes.jpg" width="1440" height="900" alt="難易度の選択画面。ベーシック・イージー・ノーマルのカードが並んでいる" loading="lazy"></div>
+      <div>
+        <h3>夜明けまで、あるいは夜が明けない</h3>
+        <p>
+          通常モードは<em>夜明けまで</em>生き延びれば勝ち。時間が来れば朝が来ます。
+          エンドレス「<em>夜は明けない</em>」だけは終わりがなく、どこまで耐えられたかを競います。
+        </p>
+        <ul>
+          <li><b>ベーシック</b>… 超入門・キーボードガイド付き・時間無制限</li>
+          <li><b>イージー</b>… かな2〜5文字・1分30秒</li>
+          <li><b>ノーマル</b>… かな3〜9文字・2分</li>
+          <li><b>ハード</b>… かな7文字以上・強ゾンビの大群・3分</li>
+          <li><b>ハードコア</b>… 3分間の最凶</li>
+          <li><b>エンドレス</b>… 夜は明けない。生存時間を競う</li>
+        </ul>
+      </div>
     </div>
-    <div class="point">
-      <h3>入れるものは何もない</h3>
-      <p>パソコンのブラウザで開くだけ。登録も課金もありません。</p>
+
+    <div class="feature feature--flip">
+      <div class="screen"><img src="/assets/img/zombie/ranking.jpg" width="900" height="1048" alt="難易度別のオンラインランキング。上位に撃破数・WPM・正確率が並んでいる" loading="lazy"></div>
+      <div>
+        <h3>名前を置いていける</h3>
+        <p>
+          リザルトには<em>WPM</em>（1分あたりの正確なキー入力数）と<em>正確率</em>が出ます。
+          難易度別のオンラインランキングに名前を残せるので、
+          タイピングの練習の記録としても使えます。
+        </p>
+        <ul>
+          <li>登録は1端末1枠。自己ベストを更新すれば自動で塗り替わる</li>
+          <li>スコアの主成分はコンボ。ノーミス区間の長さが速さに勝つ</li>
+          <li>リザルトから、そのままXへ共有できる</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <p style="text-align:center"><a class="cta" href="/zombie-typing/" target="_blank" rel="noopener">遊んでみる</a></p>
+  <!-- ── 数字 ── -->
+  <section class="sec rise">
+    <p class="sec__label">数でいうと</p>
+    <h2>入れるものは、何もない</h2>
+    <ul class="figures figures--tone">
+      <li class="figure"><b>1,200語+</b><span>収録していることば</span></li>
+      <li class="figure"><b>6</b><span>難易度とモード</span></li>
+      <li class="figure"><b>¥0</b><span>登録も課金もなし</span></li>
+    </ul>
+    <section class="points" style="margin-top:1.5rem">
+      <div class="point">
+        <h3>インストールしない</h3>
+        <p>パソコンのブラウザで開くだけです。アカウントもいりません。閉じれば終わりです。</p>
+      </div>
+      <div class="point">
+        <h3>音も、絵も、自前</h3>
+        <p>効果音とBGMはブラウザの中で合成しています。外から音源を落としてくることはありません。</p>
+      </div>
+      <div class="point">
+        <h3>IMEは起動しない</h3>
+        <p>キーの入力を直接受け取っているので、日本語入力がオンでも、変換の窓が邪魔をしません。</p>
+      </div>
+      <div class="point">
+        <h3>ソースは公開している</h3>
+        <p>ローマ字の判定エンジンも、バランスの数値も<a href="https://github.com/thisisikemen/zombie-typing" target="_blank" rel="noopener">GitHub</a>にあります。</p>
+      </div>
+    </section>
+  </section>
+
+  <p class="center" style="margin:0 0 3.5rem">
+    <a class="cta" href="/zombie-typing/" target="_blank" rel="noopener" style="padding:1rem 3rem;font-size:1.0625rem">夜明けまで生き延びる</a>
+  </p>
 
   <div data-contact></div>
 
   <a class="back" href="/">← つくったもの</a>
 
-  <footer class="foot"><p>© thisisikemen</p></footer>
+  <footer class="foot">
+    <ul class="foot__links">
+      <li><a href="/">つくったもの</a></li>
+      <li><a href="/chiritsumo/">ちりつも家計簿</a></li>
+      <li><a href="/memorundesu/">メモるんです</a></li>
+      <li><a href="https://github.com/thisisikemen/zombie-typing" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+    <p>© thisisikemen</p>
+  </footer>
+
 </div>
-<script src="/assets/contact.js"></script>
+
+<script src="/assets/contact.js" defer></script>
+<script src="/assets/site.js" defer></script>
+<script src="/assets/zombie-demo.js" defer></script>
 </body>
 </html>

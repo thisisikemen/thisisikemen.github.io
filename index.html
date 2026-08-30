@@ -3,78 +3,161 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KKがつくったもの</title>
-<meta name="description" content="ひとりで作っているアプリとゲームの置き場です。ちりつも／ゾンビタイピング／メモるんです。">
 <meta name="color-scheme" content="light">
+<meta name="theme-color" content="#eaf5d6">
+<title>KKがつくったもの — ちりつも家計簿・ゾンビタイピング・メモるんです</title>
+<meta name="description" content="ひとりで作っているiPhoneアプリとブラウザゲームの置き場です。ちりつも家計簿（レシートを撮るだけのAI家計簿）、ゾンビタイピング（無料の日本語タイピングゲーム）、メモるんです（フォルダで整理するメモ帳）。">
+<link rel="canonical" href="https://thisisikemen.github.io/">
 <meta property="og:title" content="KKがつくったもの">
-<meta property="og:description" content="ひとりで作っているアプリとゲームの置き場です。">
+<meta property="og:description" content="ひとりで作っているiPhoneアプリとブラウザゲームの置き場です。">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://thisisikemen.github.io/">
+<meta property="og:image" content="https://thisisikemen.github.io/assets/img/og/home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/icon/chiri.png">
+<link rel="apple-touch-icon" href="/assets/img/icon/chiri.png">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 
+<nav class="nav">
+  <a class="nav__home" href="/"><span class="nav__mark" aria-hidden="true"></span>KKがつくったもの</a>
+  <ul class="nav__list">
+    <li><a href="/chiritsumo/" style="--d:var(--chiri)"><i class="nav__dot"></i><span class="nav__label">ちりつも家計簿</span></a></li>
+    <li><a href="/zombie/" style="--d:var(--zombie)"><i class="nav__dot"></i><span class="nav__label">ゾンビタイピング</span></a></li>
+    <li><a href="/memorundesu/" style="--d:var(--memo)"><i class="nav__dot"></i><span class="nav__label">メモるんです</span></a></li>
+  </ul>
+</nav>
+
 <header class="top">
   <h1>KKがつくったもの</h1>
-  <p>
+  <p class="lead">
     ひとりで作っています。むずかしい設定はいりません。
     入れたその日から、なんとなく使えるものを目指しています。
   </p>
+  <ul class="legend">
+    <li style="--d:var(--chiri)"><i></i>黄は、家計簿</li>
+    <li style="--d:var(--zombie)"><i></i>赤は、ゲーム</li>
+    <li style="--d:var(--memo)"><i></i>青は、メモ</li>
+  </ul>
 </header>
 
 <div class="shell">
   <main class="cards">
 
-    <a class="card card--wide" href="/chiritsumo/"
-       style="--tone:var(--chiri);--tone-tint:var(--chiri-tint);--tone-deep:#b06f00">
-      <span class="card__tag">iPhoneアプリ・家計簿</span>
-      <h2>ちりつも</h2>
-      <p>
-        レシートを撮るだけ。AIが品目まで読み取って、家計簿にします。
-        「食パンを今月4回」みたいなことまで分かります。
-      </p>
-      <p class="card__go">くわしく見る →</p>
-      <div class="card__shot">
-        <img src="/assets/img/chiri-graph.jpg" alt="ちりつもの月レポート画面" loading="lazy">
+    <a class="card card--wide rise" href="/chiritsumo/"
+       style="--tone:var(--chiri);--tone-deep:var(--chiri-deep);--tone-tint:var(--chiri-tint)">
+      <div class="card__inner">
+        <div class="card__body">
+          <div class="card__head">
+            <img class="card__icon" src="/assets/img/icon/chiri.png" alt="" width="52" height="52" style="view-transition-name:icon-chiri">
+            <span class="tag">iPhoneアプリ・家計簿</span>
+          </div>
+          <h2>ちりつも家計簿</h2>
+          <p>
+            レシートを撮るだけ。AIが品目まで読み取って家計簿にします。
+            「食パンを今月4回」みたいな、カード明細には残らないことまで分かります。
+          </p>
+          <ul class="card__facts">
+            <li>App Storeで配信中</li>
+            <li>無料ではじめられる</li>
+            <li>アカウント登録なし・広告なし</li>
+          </ul>
+          <p class="card__go">くわしく見る <span>→</span></p>
+        </div>
+        <div class="card__shot">
+          <img src="/assets/img/chiri/home.jpg" width="620" height="1348"
+               alt="ちりつも家計簿のホーム画面。今月の支出と、AIが見つけた変化が並んでいる" loading="lazy">
+        </div>
       </div>
     </a>
 
-    <a class="card" href="/zombie/"
-       style="--tone:var(--zombie);--tone-tint:var(--zombie-tint);--tone-deep:#a52f1f">
-      <span class="card__tag">ブラウザゲーム</span>
-      <h2>ゾンビタイピング</h2>
-      <p>
-        押し寄せるゾンビを、打って倒すタイピングゲーム。
-        インストールなしで、いますぐ遊べます。
-      </p>
-      <p class="card__go">くわしく見る →</p>
-      <div class="card__shot card__shot--wide">
-        <img src="/assets/img/zombie-1.jpg" alt="ゾンビタイピングのタイトル画面" loading="lazy">
+    <a class="card rise" href="/zombie/"
+       style="--tone:var(--zombie);--tone-deep:var(--zombie-deep);--tone-tint:var(--zombie-tint)">
+      <div class="card__inner">
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__icon card__icon--draw" aria-hidden="true" style="view-transition-name:icon-zombie">Z</span>
+            <span class="tag">ブラウザゲーム</span>
+          </div>
+          <h2>ゾンビタイピング</h2>
+          <p>
+            押し寄せるゾンビの頭上のことばを、ローマ字で打って倒す。
+            インストールなしで、いますぐ遊べます。
+          </p>
+          <ul class="card__facts">
+            <li>ブラウザで今すぐ</li>
+            <li>無料・登録なし</li>
+            <li>収録1,200語以上</li>
+          </ul>
+          <p class="card__go">くわしく見る <span>→</span></p>
+        </div>
+        <div class="card__shot card__shot--wide">
+          <img src="/assets/img/zombie/title.jpg" width="1440" height="900"
+               alt="ゾンビタイピングのタイトル画面。廃墟の夜にゾンビの群れが歩いている" loading="lazy">
+        </div>
       </div>
     </a>
 
-    <a class="card" href="/memorundesu/"
-       style="--tone:var(--memo);--tone-tint:var(--memo-tint);--tone-deep:#2a5fc0">
-      <span class="card__tag">iPhoneアプリ・メモ</span>
-      <h2>メモるんです</h2>
-      <p>
-        開いた瞬間に書ける、それだけのメモ帳。
-        文字数を数えたり、そのままコピーしたりできます。
-      </p>
-      <p class="card__go">くわしく見る →</p>
-      <div class="card__shot">
-        <img src="/assets/img/memo-1.jpg" alt="メモるんですの画面" loading="lazy">
+    <a class="card rise" href="/memorundesu/"
+       style="--tone:var(--memo);--tone-deep:var(--memo-deep);--tone-tint:var(--memo-tint)">
+      <div class="card__inner">
+        <div class="card__body">
+          <div class="card__head">
+            <img class="card__icon" src="/assets/img/icon/memo.png" alt="" width="52" height="52" style="view-transition-name:icon-memo">
+            <span class="tag">iPhoneアプリ・メモ</span>
+          </div>
+          <h2>メモるんです</h2>
+          <p>
+            開いた瞬間に書ける、シンプルなメモ帳。
+            フォルダに写真をつけて、自分の色に着替えて使えます。
+          </p>
+          <ul class="card__facts">
+            <li>App Storeで配信中</li>
+            <li>無料</li>
+            <li>テーマ20色</li>
+          </ul>
+          <p class="card__go">くわしく見る <span>→</span></p>
+        </div>
+        <div class="card__shot">
+          <img src="/assets/img/memo/folders.jpg" width="620" height="1344"
+               alt="メモるんですのフォルダ一覧。写真つきのフォルダが並んでいる" loading="lazy">
+        </div>
       </div>
     </a>
 
   </main>
 
-  <p style="margin-top:2.5rem;color:var(--ink-soft);font-size:.9375rem;text-align:center">
-    お問い合わせ・不具合の報告は、それぞれのページの下からどうぞ。
-  </p>
+  <section class="maker rise" style="margin-top:3.5rem">
+    <h2>つくっている人</h2>
+    <p>
+      川端幸士郎（KK）といいます。企画も、絵も、コードも、文章も、ひとりでやっています。
+      作るものはばらばらですが、決めていることが3つあります。
+    </p>
+    <p>
+      <strong>説明書がいらないこと。</strong>
+      <strong>登録させないこと。</strong>
+      <strong>あとから直せること。</strong>
+    </p>
+    <p style="color:var(--ink-faint);font-size:.875rem">
+      うまく動かないとき、こうしてほしいと思ったときは、
+      それぞれのページのいちばん下から送ってください。ぜんぶ読んでいます。
+    </p>
+  </section>
 
   <footer class="foot">
-    <p>© thisisikemen ・ <a href="https://github.com/thisisikemen" target="_blank" rel="noopener">GitHub</a></p>
+    <ul class="foot__links">
+      <li><a href="/chiritsumo/">ちりつも家計簿</a></li>
+      <li><a href="/zombie/">ゾンビタイピング</a></li>
+      <li><a href="/memorundesu/">メモるんです</a></li>
+      <li><a href="https://github.com/thisisikemen" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+    <p>© thisisikemen</p>
   </footer>
 </div>
+
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

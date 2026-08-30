@@ -4,70 +4,347 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>ちりつも — レシートを撮るだけの家計簿</title>
-<meta name="description" content="レシートを撮るだけ。AIが品目まで読み取って家計簿にする iPhone アプリ「ちりつも」。">
-<meta property="og:title" content="ちりつも">
+<meta name="theme-color" content="#2e2621">
+<title>ちりつも家計簿 — レシートを撮るだけのAI家計簿アプリ</title>
+<meta name="description" content="レシートを撮るだけ。AIが品目まで読み取って家計簿にします。カード明細に残らない「何を、何回買ったか」が分かる iPhone アプリ。アカウント登録なし・広告なし・無料ではじめられます。">
+<link rel="canonical" href="https://thisisikemen.github.io/chiritsumo/">
+<meta property="og:title" content="ちりつも家計簿 — レシートを撮るだけのAI家計簿アプリ">
 <meta property="og:description" content="レシートを撮るだけ。AIが品目まで読み取って家計簿にします。">
 <meta property="og:type" content="website">
-<meta property="og:image" content="/assets/img/chiri-graph.jpg">
+<meta property="og:url" content="https://thisisikemen.github.io/chiritsumo/">
+<meta property="og:image" content="https://thisisikemen.github.io/assets/img/og/chiri.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/icon/chiri.png">
+<link rel="apple-touch-icon" href="/assets/img/icon/chiri.png">
 <link rel="stylesheet" href="/assets/site.css">
 </head>
-<body style="--tone:var(--chiri);--tone-tint:var(--chiri-tint);--tone-deep:#b06f00">
-<header class="hero">
-    <span class="card__tag">iPhoneアプリ・家計簿</span>
-    <h1>ちりつも</h1>
-    <p class="lead">
-      レシートを撮るだけ。<br>
-      あとはぜんぶ、AIがやります。
+<body class="t-chiri">
+
+<nav class="nav">
+  <a class="nav__home" href="/"><span class="nav__mark" aria-hidden="true"></span>KKがつくったもの</a>
+  <ul class="nav__list">
+    <li><a href="/chiritsumo/" aria-current="page" style="--d:var(--chiri)"><i class="nav__dot"></i><span class="nav__label">ちりつも家計簿</span></a></li>
+    <li><a href="/zombie/" style="--d:var(--zombie)"><i class="nav__dot"></i><span class="nav__label">ゾンビタイピング</span></a></li>
+    <li><a href="/memorundesu/" style="--d:var(--memo)"><i class="nav__dot"></i><span class="nav__label">メモるんです</span></a></li>
+  </ul>
+  <a class="nav__cta" href="https://apps.apple.com/jp/app/id6798647733" target="_blank" rel="noopener">App Store で入手</a>
+</nav>
+
+<header class="world">
+  <div class="world__inner">
+    <img class="world__icon" src="/assets/img/icon/chiri.png" alt="" width="72" height="72" style="view-transition-name:icon-chiri">
+    <h1>ちりつも家計簿</h1>
+    <p class="world__sub">
+      レシートを撮るだけ。あとはぜんぶ、AIがやります。<br>
+      <span class="world__hl">「食パン、今月4回で517円」</span>——
+      カード明細には残らないことまで、ちゃんと残る家計簿。
     </p>
-  </header>
+    <ul class="world__meta">
+      <li>無料ではじめられる</li>
+      <li>アカウント登録なし</li>
+      <li>広告なし・トラッキングなし</li>
+      <li>iPhone / iOS 18.6以上</li>
+    </ul>
+    <div class="world__act">
+      <a class="appstore" href="https://apps.apple.com/jp/app/id6798647733" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+        <span><small>ダウンロード</small><b>App Store</b></span>
+      </a>
+    </div>
+    <div class="world__stage world__stage--phone">
+      <div class="phone"><img src="/assets/img/chiri/insight.jpg" width="620" height="1348" alt="ホーム画面。AIが見つけた変化と、ちりつもの一覧"></div>
+      <div class="phone"><img src="/assets/img/chiri/home.jpg" width="620" height="1348" alt="ホーム画面。今月の支出と、レシート撮影・画像から・手入力のボタン" fetchpriority="high"></div>
+      <div class="phone"><img src="/assets/img/chiri/report.jpg" width="620" height="1348" alt="AIが書いた月レポート"></div>
+    </div>
+  </div>
+</header>
+
 <div class="shell">
 
-  <div class="shots">
-    <figure>
-      <img src="/assets/img/chiri-home.jpg" alt="ホーム画面。今月の支出と、AIが見つけた変化が並んでいる" loading="lazy">
-      <figcaption>撮ったその日から、<br>今月いくら使ったか分かる</figcaption>
-    </figure>
-    <figure>
-      <img src="/assets/img/chiri-report.jpg" alt="AIが書いた月レポート" loading="lazy">
-      <figcaption>グラフを読まなくていい。<br>AIが言葉で教えてくれる</figcaption>
-    </figure>
-    <figure>
-      <img src="/assets/img/chiri-graph.jpg" alt="カテゴリ別の円グラフ" loading="lazy">
-      <figcaption>気になったときだけ、<br>グラフで確かめられる</figcaption>
-    </figure>
-  </div>
+  <!-- ── 3つの動作でぜんぶ終わる ── -->
+  <section class="sec rise">
+    <p class="sec__label">つかいかた</p>
+    <h2>やることは、撮ることだけ</h2>
+    <p>家計簿が続かないのは、入力がめんどうだからです。だから入力を、まるごとなくしました。</p>
+    <ol class="steps">
+      <li class="step">
+        <h3>撮る</h3>
+        <p>レジで受け取ったレシートを、その場でぱしゃり。アルバムの写真からでも、手入力でも大丈夫です。</p>
+      </li>
+      <li class="step">
+        <h3>AIが読む</h3>
+        <p>店名と金額だけでなく、明細から1品ずつの名前・個数・分類まで読み取ります。読み違えたところは、あとから直せます。</p>
+      </li>
+      <li class="step">
+        <h3>積み上がる</h3>
+        <p>撮ったその日から、今月いくら使ったかが出ます。何もしなくても、AIが変化を見つけて言葉にします。</p>
+      </li>
+    </ol>
+  </section>
 
-  <section class="points">
-    <div class="point">
-      <h3>撮るだけで、品目まで入る</h3>
-      <p>店名と金額だけじゃなく、1品ずつの名前と分類まで入ります。打ち直しはいりません。</p>
+  <!-- ── レシートを撮っているところ。App Storeの絵をそのまま置く ── -->
+</div>
+
+<div class="shell" style="padding-bottom:0">
+  <section class="poster rise">
+    <div class="poster__txt">
+      <p class="sec__label">入力ゼロ</p>
+      <h2>財布から出して、<br>かざすだけ</h2>
+      <p>レジを出たその場でも、家に帰ってまとめてでも。店名も、金額も、1品ずつの名前も、AIが読み取ります。<em>打ち直しはありません。</em></p>
+      <ul>
+        <li>カメラでその場から</li>
+        <li>アルバムの写真からも</li>
+        <li>レシートがない買い物は手入力で</li>
+      </ul>
     </div>
-    <div class="point">
-      <h3>「食パン、今月4回で517円」</h3>
-      <p>安いのに何回も買っているものを見つけて、このまま続けたら1年でいくらになるかを出します。</p>
-    </div>
-    <div class="point">
-      <h3>グラフとにらめっこしなくていい</h3>
-      <p>「外食が食費と並んでます」「18時台に3割が集中してます」。AIが先に言葉にします。</p>
-    </div>
-    <div class="point">
-      <h3>データはiPhoneの中だけ</h3>
-      <p>家計簿の中身は端末に保存されます。レシートの写真も、読み取りのときだけ送って保存はしません。</p>
+    <figure>
+      <img src="/assets/img/chiri/store-3.jpg" width="600" height="1300"
+           alt="レシートを撮影しているところ。入力ゼロ・ストレスゼロ" loading="lazy">
+    </figure>
+  </section>
+</div>
+
+<div class="shell">
+
+  <!-- ── レシートにしかないもの ── -->
+  <section class="sec rise">
+    <p class="sec__label">なぜレシートなのか</p>
+    <h2>カード明細では、わからない</h2>
+    <p>
+      クレジットカードやコード決済の履歴に残るのは「どこで、いくら払ったか」だけです。
+      「何を、何回買ったか」は、レシートにしかありません。ちりつもは、そこを見ています。
+    </p>
+    <div class="versus">
+      <div class="versus__col versus__col--off">
+        <h3>カード・コード決済の明細</h3>
+        <ul>
+          <li><span class="versus__mark">◯</span><b>いつ</b></li>
+          <li><span class="versus__mark">◯</span><b>どこで</b></li>
+          <li class="is-no"><span class="versus__mark">✕</span><b>商品名</b></li>
+          <li class="is-no"><span class="versus__mark">✕</span><b>何個</b></li>
+          <li class="is-no"><span class="versus__mark">✕</span><b>1品ずつの値段</b></li>
+          <li class="is-no"><span class="versus__mark">✕</span><b>割引</b></li>
+        </ul>
+      </div>
+      <div class="versus__col versus__col--on">
+        <h3>ちりつも（レシートから）</h3>
+        <ul>
+          <li><span class="versus__mark">◯</span><b>いつ</b></li>
+          <li><span class="versus__mark">◯</span><b>どこで</b></li>
+          <li><span class="versus__mark">◯</span><b>商品名</b></li>
+          <li><span class="versus__mark">◯</span><b>何個</b></li>
+          <li><span class="versus__mark">◯</span><b>1品ずつの値段</b></li>
+          <li><span class="versus__mark">◯</span><b>割引</b></li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <div class="note">
-    <strong>料金</strong><br>
-    はじめの30枚は無料です。期限はないので、ためてから使っても大丈夫。
-    使い切ったあとも、毎月10枚までは無料で読み取れます。<br>
-    もっと使いたい方向けに「ちりつもプレミアム」（月額・自動更新）があります。
-    読み取りが無制限になり、アルバムからまとめて読み取れます。料金はApp Storeの購入画面に出ます。
-  </div>
+  <!-- ── ちりつもの年間換算 ── -->
+  <section class="sec rise">
+    <div class="feature">
+      <div class="phone"><img src="/assets/img/chiri/tsumo.jpg" width="620" height="1348" alt="ちりつも。ついつい買っているものが年いくらになるかの一覧" loading="lazy"></div>
+      <div>
+        <p class="sec__label">ちりつも</p>
+        <h3>1回では気にならないものが、<br>1年でいくらになるか</h3>
+        <p>
+          安いのに何回も買っているものを見つけて、このまま続けたら1年でいくらになるかを出します。
+          レジ袋も、缶コーヒーも、ここに並びます。名前のとおり、ちりも積もればを、数字で見せるところです。
+        </p>
+      </div>
+    </div>
+    <ul class="figures figures--tone" style="margin-top:.5rem">
+      <li class="figure"><b>¥150</b><span>1本の飲みもの</span></li>
+      <li class="figure"><b>週3回</b><span>気づかずに買っている</span></li>
+      <li class="figure"><b>年 ¥23,400</b><span>これが「ちりつも」</span></li>
+    </ul>
+  </section>
 
-  <p style="text-align:center">
-    <span class="card__tag">App Store 準備中</span>
-  </p>
+  <!-- ── AIが言葉にする ── -->
+  <section class="sec rise">
+    <div class="feature feature--flip">
+      <div class="phones">
+        <div class="phone"><img src="/assets/img/chiri/report.jpg" width="620" height="1348" alt="月レポート。AIが書いた今月のまとめ" loading="lazy"></div>
+        <div class="phone"><img src="/assets/img/chiri/donut.jpg" width="620" height="1348" alt="月レポート。カテゴリ別の円グラフと内訳" loading="lazy"></div>
+      </div>
+      <div>
+        <p class="sec__label">月レポート</p>
+        <h3>グラフとにらめっこ<br>しなくていい</h3>
+        <p>
+          円グラフを見て自分で気づくのは、けっこう大変です。だから先に、AIが言葉にします。
+          根拠が気になったときだけ、グラフを開いて確かめれば十分です。
+        </p>
+        <blockquote class="quote">
+          <p>今月は<em>外食が1,945円減り</em>、食料品も1,547円減って全体支出が落ち着いてきました。<em>コンビニのセブンイレブン利用も3.5回減り</em>、減らしたい意向に沿う動きです。</p>
+          <cite>アプリが実際に書いたレポートより</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 細かいけれど効くところ ── -->
+  <section class="sec rise">
+    <p class="sec__label">こまかいところ</p>
+    <h2>続けるために入れたもの</h2>
+    <section class="points">
+      <div class="point">
+        <h3>ためてから、まとめて</h3>
+        <p>財布にたまったレシートは、アルバムから最大5枚をいっぺんに読み取れます（プレミアム）。3枚まとめて確認して、まとめて追加。</p>
+      </div>
+      <div class="point">
+        <h3>読み違えは、直せる</h3>
+        <p>AIの推定なので、たまに読み違えます。金額・店名・カテゴリ・品目は、記録を開けばあとから直せます。直した内容はそのまま集計に反映されます。</p>
+      </div>
+      <div class="point">
+        <h3>誰と、なぜ買ったかも残せる</h3>
+        <p>「一人／友達と／恋人と／家族と」「自分が払った／割り勘」。答えたいときだけ、タップで足せます。答えなくても困りません。</p>
+      </div>
+      <div class="point">
+        <h3>CSVで持ち出せる・持ち込める</h3>
+        <p>ほかの家計簿アプリやExcelの表からも取り込めますし、書き出しもできます。機種変更のときは、品目明細のCSVを読み込めば品目まで元どおりです。</p>
+      </div>
+    </section>
+  </section>
+
+</div>
+
+<!-- ── App Storeと同じ地の色で、スクリーンショットを並べる ── -->
+<div class="shell" style="padding-bottom:0">
+  <section class="gallery rise">
+    <div class="gallery__head">
+      <h2>アプリの中を、ひととおり</h2>
+      <p>App Storeに出しているものと同じ画面です</p>
+    </div>
+    <div class="gallery__strip">
+      <button class="shot" type="button" data-zoom><img src="/assets/img/chiri/store-1.jpg" width="600" height="1299" alt="AI時代の最新家計簿。登録なし・広告なし" loading="lazy"></button>
+      <button class="shot" type="button" data-zoom><img src="/assets/img/chiri/store-3.jpg" width="600" height="1300" alt="入力ゼロ・ストレスゼロ。レシート撮るだけ、だから続く" loading="lazy"></button>
+      <button class="shot" type="button" data-zoom><img src="/assets/img/chiri/store-2.jpg" width="600" height="1300" alt="カード明細では、わからない。いつ・どこで・商品名・何個・いくら・割引" loading="lazy"></button>
+      <button class="shot" type="button" data-zoom><img src="/assets/img/chiri/store-4.jpg" width="600" height="1300" alt="分析はAIの仕事。習慣も、変化も教えてくれる" loading="lazy"></button>
+      <button class="shot" type="button" data-zoom><img src="/assets/img/chiri/store-5.jpg" width="600" height="1300" alt="レジ袋、560円でした。それは気づけない日々のちりつも" loading="lazy"></button>
+      <button class="shot" type="button" data-zoom><img src="/assets/img/chiri/store-6.jpg" width="600" height="1296" alt="後からまとめてアップ。圧倒的に早い・だから続く" loading="lazy"></button>
+      <button class="shot" type="button" data-zoom><img src="/assets/img/chiri/store-7.jpg" width="600" height="1296" alt="CSV書出・読込対応。他のアプリ・Excelから引き継げる" loading="lazy"></button>
+    </div>
+    <p class="gallery__hint">横に流せます／押すと大きくなります</p>
+  </section>
+</div>
+
+<div class="shell">
+
+  <!-- ── 料金 ── -->
+  <section class="sec rise">
+    <p class="sec__label">料金</p>
+    <h2>まず無料で、30枚ためしてください</h2>
+    <p>期限はありません。財布にたまったレシートを、まとめて使ってもらって構いません。</p>
+    <div class="feature" style="margin-bottom:2rem">
+      <div class="phones">
+        <div class="phone"><img src="/assets/img/chiri/welcome.jpg" width="620" height="1348" alt="はじめまして。30枚ぶんの読み取りをプレゼントします" loading="lazy"></div>
+        <div class="phone"><img src="/assets/img/chiri/premium.jpg" width="620" height="1344" alt="ちりつもプレミアムの案内画面" loading="lazy"></div>
+      </div>
+      <div>
+        <h3>はじめの30枚は、期限なし</h3>
+        <p>入れてすぐ30枚ぶんお渡しします。ためこんだレシートを一気に片づけても、少しずつ試しても構いません。使い切ったあとも、毎月10枚までは無料のままです。</p>
+        <p>足りなくなったときだけ、プレミアムを考えてもらえれば十分です。無料のままでも、手入力・月レポート・CSVの書き出しはずっと使えます。</p>
+      </div>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <h3>無料</h3>
+        <p class="plan__price">¥0</p>
+        <ul>
+          <li>はじめの30枚（期限なし・一人一度）</li>
+          <li>使い切ったあとも毎月10枚</li>
+          <li>手入力は無制限</li>
+          <li>月レポート・CSV書き出し</li>
+        </ul>
+      </div>
+      <div class="plan plan--paid">
+        <h3>ちりつもプレミアム</h3>
+        <p class="plan__price">月額 <small>／自動更新</small></p>
+        <ul>
+          <li>レシートの読み取りが無制限</li>
+          <li>アルバムから最大5枚をまとめて読み取り</li>
+          <li>金額はApp Storeの購入画面に出ます</li>
+          <li>解約は iPhone の設定 → Apple ID → サブスクリプション から</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── データ ── -->
+  <section class="sec rise">
+    <p class="sec__label">データの扱い</p>
+    <h2>家計簿は、iPhoneの中だけ</h2>
+    <section class="points">
+      <div class="point">
+        <h3>アカウント登録がない</h3>
+        <p>氏名もメールアドレスもうかがいません。広告もトラッキングもありません。分析SDKも入れていません。</p>
+      </div>
+      <div class="point">
+        <h3>家計簿は端末の中に保存</h3>
+        <p>支出の記録・明細・メモは、お使いのiPhoneの中にだけ保存されます。作った本人がのぞくこともできません。</p>
+      </div>
+      <div class="point">
+        <h3>レシートの写真は保存しない</h3>
+        <p>読み取りのときだけAIへ送り、こちらのサーバーには残しません。中継するだけです。</p>
+      </div>
+      <div class="point">
+        <h3>くわしくはポリシーに</h3>
+        <p>どこへ何を送っているか、いつ消えるかまで<a href="/chiritsumo/privacy/">プライバシーポリシー</a>に書いています。</p>
+      </div>
+    </section>
+  </section>
+
+  <!-- ── よくある質問（抜粋） ── -->
+  <section class="sec rise">
+    <p class="sec__label">よくある質問</p>
+    <h2>気になりそうなこと</h2>
+    <div class="faq">
+      <details>
+        <summary>無料でどれくらい使えますか</summary>
+        <div><p>はじめの30枚は無料です。期限はないので、ためてから使っても構いません。使い切ったあとも、毎月10枚までは無料で読み取れます。残りの枚数はアプリの「設定」で確認できます。</p></div>
+      </details>
+      <details>
+        <summary>金額や品目が間違って読み取られました</summary>
+        <div><p>AIによる推定なので、読み違えることがあります。記録を開くと、金額・店名・カテゴリ・品目はあとから直せます。直した内容はそのまま集計に反映されます。</p></div>
+      </details>
+      <details>
+        <summary>機種変更したらデータはどうなりますか</summary>
+        <div><p>家計簿は端末の中にだけあります。設定の「家計簿をCSVで書き出す」で書き出し、新しい端末で「CSVを読み込む」から<strong>品目明細</strong>のほうを読み込んでください。同じレシートの商品はひとつの記録にまとまり、品目まで元どおりになります。無料枠は同じApple アカウントに紐づいているので、そのまま引き継がれます。</p></div>
+      </details>
+      <details>
+        <summary>レシートの写真はどこかに保存されますか</summary>
+        <div><p>読み取りのときだけ送信し、こちらのサーバーには保存していません。くわしくは<a href="/chiritsumo/privacy/">プライバシーポリシー</a>をご覧ください。</p></div>
+      </details>
+    </div>
+    <p style="margin-top:1rem"><a class="back" style="margin-top:0" href="/chiritsumo/support/">ほかの質問も見る（サポート） →</a></p>
+  </section>
+
+  <!-- ── App Store の情報 ── -->
+  <section class="sec rise">
+    <p class="sec__label">アプリの情報</p>
+    <h2>ちりつも家計簿</h2>
+    <div class="spec">
+      <dl>
+        <dt>正式名称</dt><dd>ちりつも家計簿-レシート撮るだけAI節約アプリ</dd>
+        <dt>提供</dt><dd>Koshiro Kawabata</dd>
+        <dt>カテゴリ</dt><dd>ファイナンス</dd>
+        <dt>価格</dt><dd>無料（アプリ内課金あり）</dd>
+        <dt>対応</dt><dd>iPhone・iOS 18.6以上／Apple M1以降のMac・visionOS</dd>
+        <dt>サイズ</dt><dd>約 4.4 MB</dd>
+        <dt>言語</dt><dd>日本語</dd>
+        <dt>年齢</dt><dd>4+</dd>
+        <dt>公開</dt><dd>2026年8月29日</dd>
+      </dl>
+    </div>
+    <p class="center" style="margin-top:1.75rem">
+      <a class="appstore" href="https://apps.apple.com/jp/app/id6798647733" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+        <span><small>ダウンロード</small><b>App Store</b></span>
+      </a>
+    </p>
+  </section>
 
   <div data-contact></div>
 
@@ -80,10 +357,17 @@
   <a class="back" href="/">← つくったもの</a>
 
   <footer class="foot">
+    <ul class="foot__links">
+      <li><a href="/">つくったもの</a></li>
+      <li><a href="/zombie/">ゾンビタイピング</a></li>
+      <li><a href="/memorundesu/">メモるんです</a></li>
+    </ul>
     <p>© thisisikemen</p>
   </footer>
 
 </div>
-<script src="/assets/contact.js"></script>
+
+<script src="/assets/contact.js" defer></script>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>
