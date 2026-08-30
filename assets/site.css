@@ -277,6 +277,9 @@ a.card:hover .card__go span { transform: translateX(5px); }
   max-height: 15rem; overflow: hidden;
 }
 .card__shot img {
+  /* flex の子は既定で親の高さまで引き伸ばされ、縦横比が崩れる。
+     コンテナ側の align-items と合わせて、ここでも明示的に止める */
+  align-self: flex-start; height: auto;
   width: 64%; max-width: 13.5rem;
   border-radius: 22px 22px 0 0;
   border: 1px solid rgba(0,0,0,.07); border-bottom: 0;
