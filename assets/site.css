@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/* KKがつくったもの — 共通スタイル
+/* KKの、つくったもの置き場 — 共通スタイル
  *
  * 考えかた（2026-08-30 改訂）
  *
@@ -271,6 +271,9 @@ a.card:hover .card__go span { transform: translateX(5px); }
 .card__shot {
   position: relative; z-index: 1; margin-top: 1.4rem;
   display: flex; justify-content: center;
+  /* align-items を指定しないと stretch になり、max-height に合わせて
+     画像が縦につぶれる。上端ぞろえにして、はみ出た下だけを隠す */
+  align-items: flex-start;
   max-height: 15rem; overflow: hidden;
 }
 .card__shot img {
@@ -771,3 +774,34 @@ a.card:hover .card__shot img { transform: translateY(-10px); }
 .phones .phone { flex: 1 1 0; min-width: 0; }
 .phones .phone:last-child { transform: translateY(1.75rem) scale(.9); opacity: .92; }
 @media (max-width: 30rem) { .phones .phone:last-child { display: none; } }
+
+/* ══ つくった人からの手紙 ══════════════════════════
+ * 料金の話は、仕組みだけ書いても伝わらない。
+ * なぜお金がかかるのかを、本人の言葉で置いておく場所。 */
+
+.letter {
+  position: relative;
+  background: var(--tone-tint);
+  border-radius: 26px;
+  padding: 2.25rem 1.75rem 2rem;
+  margin: 0 0 2.5rem;
+}
+@media (min-width: 40rem) { .letter { padding: 2.5rem 3rem 2.25rem; } }
+
+.letter__label {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-size: .75rem; font-weight: 700; font-family: var(--gothic);
+  color: var(--tone-deep); letter-spacing: .08em; margin: 0 0 .5rem;
+}
+.letter__label::before { content: ""; width: 1.5rem; height: 2px; background: var(--tone); border-radius: 2px; }
+
+.letter h3 { margin: 0 0 1rem; font-size: clamp(1.2rem, 4vw, 1.5rem); line-height: 1.6; }
+.letter p { margin: 0 0 1rem; font-size: .9375rem; line-height: 2.05; color: #4a4f42; }
+.letter p:last-of-type { margin-bottom: 0; }
+.letter strong { color: var(--ink); }
+.letter em { font-style: normal; color: var(--tone-deep); font-weight: 700; }
+
+.letter__sign {
+  margin: 1.5rem 0 0; text-align: right;
+  font-size: .875rem; color: var(--ink-soft);
+}
