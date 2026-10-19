@@ -7,11 +7,13 @@
  * 1. 地はライムグリーン。サイト全体の「顔」はこの1色。
  * 2. そのうえで、作品ごとに色を1つ割り当てる。色＝どの作品か、を意味させる。
  *      ちりつも家計簿 … 黄  ／ ゾンビタイピング … 赤  ／ メモるんです … 青
+ *      チャットで予定 … 紫（2026-10-20 追加）
  *    ヘッダーの丸、カードの上辺、見出しの罫、ボタン。ぜんぶ同じ色でそろえる。
  *    「この色を見たらこのアプリ」と体が覚えるように、色に仕事をさせる。
  * 3. 一覧（ホーム）は明るいまま。でも作品のページに入った瞬間だけ、
  *    そのアプリ自身の世界の色に飛び込む（--world）。
  *      ちりつも … こげ茶に金  ／ ゾンビ … 夜と血  ／ メモるんです … 青のグラデ
+ *      チャットで予定 … 夜の紫のグラデ
  *    App Storeのスクリーンショットの地の色をそのまま使っているので、
  *    画像と背景の境目が消えて、絵が浮いているように見える。
  * 4. 端末のダークモードには合わせない。スクリーンショットが明るいので、
@@ -50,6 +52,11 @@
   --memo-tint: #eaf1ff;
   --memo-world: #3478f7;
 
+  --chat: #8a5cf0;
+  --chat-deep: #6a3fd0;
+  --chat-tint: #f3edff;
+  --chat-world: #2b1d52;
+
   --sans: "Hiragino Maru Gothic ProN", "Hiragino Maru Gothic Pro", "Hiragino Sans",
           "Yu Gothic Medium", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
   --gothic: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP",
@@ -68,6 +75,7 @@
 body.t-chiri  { --tone: var(--chiri);  --tone-deep: var(--chiri-deep);  --tone-tint: var(--chiri-tint);  --world: var(--chiri-world); }
 body.t-zombie { --tone: var(--zombie); --tone-deep: var(--zombie-deep); --tone-tint: var(--zombie-tint); --world: var(--zombie-world); }
 body.t-memo   { --tone: var(--memo);   --tone-deep: var(--memo-deep);   --tone-tint: var(--memo-tint);   --world: var(--memo-world); }
+body.t-chat   { --tone: var(--chat);   --tone-deep: var(--chat-deep);   --tone-tint: var(--chat-tint);   --world: var(--chat-world); }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 5rem; }
@@ -313,6 +321,13 @@ a.card:hover .card__shot img { transform: translateY(-10px); }
 }
 .world--memo { background: linear-gradient(160deg, #3478f7 0%, #4667e3 55%, #5857cf 100%); }
 .world--zombie { background: radial-gradient(120% 90% at 50% 0%, #241a2a 0%, #0d0b14 70%); }
+.world--chat { background: linear-gradient(165deg, #7a4fe6 0%, #5a37b8 45%, #2b1d52 100%); }
+.world--chat .world__hl { color: #ffe08a; }
+.world__soon {
+  display: inline-block; padding: .55rem 1.4rem; border-radius: 999px;
+  background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22);
+  color: #fff; font-weight: 700; font-size: .9375rem;
+}
 .world--zombie h1 { text-shadow: 0 0 34px rgba(207, 63, 44, .5), 0 2px 2px rgba(0,0,0,.6); }
 
 .world__inner { max-width: 60rem; margin: 0 auto; text-align: center; position: relative; }
@@ -808,3 +823,38 @@ a.card:hover .card__shot img { transform: translateY(-10px); }
   margin: 1.5rem 0 0; text-align: right;
   font-size: .875rem; color: var(--ink-soft);
 }
+
+/* ══ チャットで予定：画像がまだ無いあいだの、HTMLで描いたチャット画面 ══
+ * スクリーンショットが用意できたら .phone の中を img に差し替える。 */
+
+.chatmock {
+  aspect-ratio: 620 / 1100; width: 100%;
+  border-radius: 10.5% / 5.9%;
+  background: linear-gradient(180deg, #f6f2ff 0%, #ece4ff 100%);
+  display: flex; flex-direction: column; justify-content: flex-end; gap: .6rem;
+  padding: 1.25rem .8rem 1.6rem; text-align: left; color: var(--ink);
+  font-size: .75rem; line-height: 1.6;
+}
+.chatmock__day { align-self: center; font-size: .6875rem; color: #7d72a3; margin-bottom: .2rem; }
+.chatmock p { margin: 0; }
+.chatmock__me {
+  align-self: flex-end; max-width: 84%;
+  background: var(--chat); color: #fff; padding: .5rem .8rem; border-radius: 16px 16px 4px 16px;
+}
+.chatmock__ai {
+  align-self: flex-start; max-width: 86%;
+  background: #fff; padding: .55rem .8rem; border-radius: 16px 16px 16px 4px;
+  box-shadow: 0 2px 10px rgba(60, 40, 120, .08);
+}
+.chatmock__card {
+  align-self: stretch; background: #fff; border-radius: 14px; padding: .6rem .8rem;
+  border-left: 4px solid var(--chat); box-shadow: 0 2px 10px rgba(60, 40, 120, .08);
+}
+.chatmock__card b { display: block; font-size: .875rem; }
+.chatmock__card span { color: var(--ink-soft); font-size: .75rem; }
+.card__icon--chat { background: linear-gradient(150deg, #8a5cf0, #5a37b8); display: grid; place-items: center; }
+.card__icon--chat svg, .world__icon--chat svg { width: 62%; height: 62%; }
+.world__icon--chat { display: grid; place-items: center; background: linear-gradient(150deg, #9a72f5, #6a3fd0); }
+@media (min-width: 40rem) { .plans--four { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 60rem) { .plans--four { grid-template-columns: repeat(4, 1fr); } }
+.card__inner > .card__body:only-child { padding-bottom: 1.5rem; }

@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#7a4fe6">
+<title>チャットで予定 — 話しかけるだけで、予定が入るカレンダー</title>
+<meta name="description" content="「明日19時に友達とご飯」と送るだけで、AIが日付と時間を読み取って、iPhoneのカレンダーに入れます。はじめの30回は無料。iPhone用アプリ（準備中）。">
+<link rel="canonical" href="https://thisisikemen.github.io/calendarchat/">
+<meta property="og:title" content="チャットで予定 — 話しかけるだけで、予定が入るカレンダー">
+<meta property="og:description" content="「明日19時に友達とご飯」と送るだけで、AIがiPhoneのカレンダーに入れます。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thisisikemen.github.io/calendarchat/">
+<meta property="og:image" content="https://thisisikemen.github.io/assets/img/og/home.jpg?v=2">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/icon/chat.svg">
+<link rel="stylesheet" href="/assets/site.css?v=20261020">
+</head>
+<body class="t-chat">
+
+<nav class="nav">
+  <a class="nav__home" href="/"><span class="nav__mark" aria-hidden="true"></span>けーけーの、つくったもの置き場</a>
+  <ul class="nav__list">
+    <li><a href="/chiritsumo/" style="--d:var(--chiri)"><i class="nav__dot"></i><span class="nav__label">ちりつも家計簿</span></a></li>
+    <li><a href="/zombie/" style="--d:var(--zombie)"><i class="nav__dot"></i><span class="nav__label">ゾンビタイピング</span></a></li>
+    <li><a href="/memorundesu/" style="--d:var(--memo)"><i class="nav__dot"></i><span class="nav__label">メモるんです</span></a></li>
+    <li><a href="/calendarchat/" aria-current="page" style="--d:var(--chat)"><i class="nav__dot"></i><span class="nav__label">チャットで予定</span></a></li>
+  </ul>
+</nav>
+
+<header class="world world--chat">
+  <div class="world__inner">
+    <span class="world__icon world__icon--chat" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="9" width="30" height="28" rx="7"/><path d="M13 5v7M27 5v7M5 19h30"/><path d="M29 27h11a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-1.5l-3.5 4-1-4H29a4 4 0 0 1-4-4v-6a4 4 0 0 1 4-4z" fill="#fff" stroke="none"/></svg></span>
+    <h1>チャットで予定</h1>
+    <p class="world__sub">
+      話しかけるだけで、予定が入るカレンダー。<br>
+      <span class="world__hl">「明日19時に友達とご飯」</span>と送れば、
+      AIが日付と時間を読み取って、iPhoneのカレンダーに入れます。
+    </p>
+    <ul class="world__meta">
+      <li>無料ではじめられる</li>
+      <li>はじめの30回プレゼント</li>
+      <li>iPhoneのカレンダー・リマインダーに入る</li>
+      <li>アカウント登録なし</li>
+    </ul>
+    <div class="world__act">
+      <span class="world__soon">ただいま準備中です（アプリ名も仮です）</span>
+    </div>
+    <div class="world__stage world__stage--phone">
+      <div class="phone">
+        <div class="chatmock" role="img" aria-label="「今週の予定は？」と聞くと、今週の予定を答えている">
+          <p class="chatmock__day">きょう</p>
+          <p class="chatmock__me">今週の予定は？</p>
+          <p class="chatmock__ai">今週は3件です。水曜19時に友達とご飯、金曜までにレポート、土曜はお出かけです。</p>
+        </div>
+      </div>
+      <div class="phone">
+        <div class="chatmock" role="img" aria-label="「明日19時に友達とご飯」と送ると、予定に入ったことがカードで返ってくる">
+          <p class="chatmock__day">きょう</p>
+          <p class="chatmock__me">明日19時に友達とご飯</p>
+          <p class="chatmock__ai">カレンダーに入れました。</p>
+          <div class="chatmock__card"><b>友達とご飯</b><span>明日 19:00〜20:00</span></div>
+          <p class="chatmock__me">やっぱり20時からで</p>
+          <p class="chatmock__ai">20:00〜21:00に変えました。</p>
+        </div>
+      </div>
+      <div class="phone">
+        <div class="chatmock" role="img" aria-label="「金曜までにレポート提出」と送ると、やることに入る">
+          <p class="chatmock__day">きょう</p>
+          <p class="chatmock__me">金曜までにレポート提出</p>
+          <p class="chatmock__ai">やることに入れました。</p>
+          <div class="chatmock__card"><b>レポート提出</b><span>金曜日まで・リマインダー</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+
+  <section class="sec rise">
+    <p class="sec__label">つかいかた</p>
+    <h2>やることは、送ることだけ</h2>
+    <p>予定を入れるのが面倒なのは、日付と時間を選ぶところです。だから、そこをAIに任せました。</p>
+    <ol class="steps">
+      <li class="step">
+        <h3>送る</h3>
+        <p>友達にLINEするのと同じように書くだけ。声で入力しても、チラシの写真を送っても大丈夫です。</p>
+      </li>
+      <li class="step">
+        <h3>AIが読む</h3>
+        <p>「明日」「来週の金曜」「19時」を、ちゃんとした日付と時間にします。予定か、やることかも見分けます。</p>
+      </li>
+      <li class="step">
+        <h3>カレンダーに入る</h3>
+        <p>入る先は、iPhoneの「カレンダー」と「リマインダー」。通知も同期も、いつもどおりです。</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="sec rise">
+    <p class="sec__label">できること</p>
+    <h2>送ったあとも、話しかけて直せる</h2>
+    <section class="points">
+      <div class="point">
+        <h3>「やっぱり20時で」</h3>
+        <p>入れた予定に、そのまま話しかけて直せます。「キャンセルで」と送れば消すこともできます。</p>
+      </div>
+      <div class="point">
+        <h3>「今週の予定は？」</h3>
+        <p>聞けば答えます。カレンダーを開いて探さなくても、その日の予定が分かります。</p>
+      </div>
+      <div class="point">
+        <h3>カレンダーからも</h3>
+        <p>チャットだけでなく、カレンダーの日付から手で入れることもできます。いつもの予定は、スタンプでぽんと置けます。</p>
+      </div>
+      <div class="point">
+        <h3>着せかえ</h3>
+        <p>夜景や秋の景色など、テーマで画面ごと着せかえられます。</p>
+      </div>
+    </section>
+  </section>
+
+</div>
+
+<div class="shell" style="padding-bottom:0">
+  <section class="sec rise">
+    <p class="sec__label">料金</p>
+    <h2>まず無料で、30回ためしてください</h2>
+    <p>期限はありません。使い切ったあとも、毎月15回までは無料のままです。</p>
+
+    <section class="letter" id="letter">
+      <p class="letter__label">つくった人から</p>
+      <h3>なぜ、プランがあるのか</h3>
+      <p>
+        チャットを1回送るたびに、<em>AIの利用料が実際にかかっています</em>。
+        1回ぶんは小さな額ですが、送ってくださった回数だけ請求が来ます。
+        そのため、どうしても「無料で使い放題」にはできませんでした。
+      </p>
+      <p>
+        <strong>はじめの30回と、毎月15回は、無料のままにしておきます。</strong>
+        そのうえで、チャットをたくさん使う方に向けてプランを用意しました。
+        広告を消したいだけならライト、毎日チャットで予定を入れるならスタンダード、
+        回数を気にせず使いたいならプレミアムです。合うものがあれば、ご検討いただけるとうれしいです。
+      </p>
+      <p class="letter__sign">— けーけー</p>
+    </section>
+
+    <div class="plans plans--four">
+      <div class="plan">
+        <h3>無料</h3>
+        <p class="plan__price">¥0</p>
+        <ul>
+          <li>はじめの30回（期限なし・一度だけ）</li>
+          <li>使い切ったあとも毎月15回</li>
+          <li>カレンダー画面に広告が出ます（チャット画面には出ません）</li>
+        </ul>
+      </div>
+      <div class="plan">
+        <h3>ライト</h3>
+        <p class="plan__price">月160円<small>／年1,600円</small></p>
+        <ul>
+          <li>広告なし</li>
+          <li>チャットは無料と同じ（毎月15回）</li>
+          <li>広告を消して、すっきり使いたい方に</li>
+        </ul>
+      </div>
+      <div class="plan plan--paid">
+        <h3>スタンダード</h3>
+        <p class="plan__price">月480円<small>／年4,800円</small></p>
+        <ul>
+          <li>広告なし</li>
+          <li>チャット 毎月150回</li>
+          <li>毎日チャットで予定を入れる方に</li>
+        </ul>
+      </div>
+      <div class="plan">
+        <h3>プレミアム</h3>
+        <p class="plan__price">月980円<small>／年9,800円</small></p>
+        <ul>
+          <li>広告なし</li>
+          <li>チャット 毎月1,000回</li>
+          <li>回数を気にせず使いたい方に</li>
+        </ul>
+      </div>
+    </div>
+    <p style="color:var(--ink-faint);font-size:.8125rem;margin-top:1rem">
+      どのプランも自動更新のサブスクリプションです。年額は2か月分ほどお得です。
+      解約は iPhone の「設定」→ Apple ID →「サブスクリプション」からいつでもできます。
+      公開前のため、内容は変わることがあります。
+    </p>
+  </section>
+</div>
+
+<div class="shell">
+
+  <section class="sec rise">
+    <p class="sec__label">データの扱い</p>
+    <h2>予定は、iPhoneの中だけ</h2>
+    <section class="points">
+      <div class="point">
+        <h3>アカウント登録がない</h3>
+        <p>氏名もメールアドレスもうかがいません。入れてすぐ使えます。</p>
+      </div>
+      <div class="point">
+        <h3>予定はiPhoneのカレンダーに</h3>
+        <p>予定とやることは、iPhoneの「カレンダー」「リマインダー」に入ります。こちらのサーバーには置きません。</p>
+      </div>
+      <div class="point">
+        <h3>チャットは中継するだけ</h3>
+        <p>送った文章は、返事を作るときだけAIへ送り、こちらのサーバーには残しません。</p>
+      </div>
+      <div class="point">
+        <h3>くわしくはポリシーに</h3>
+        <p>広告のことも含めて、どこへ何を送っているかを<a href="/calendarchat/privacy/">プライバシーポリシー</a>に書いています。</p>
+      </div>
+    </section>
+  </section>
+
+  <section class="sec rise">
+    <p class="sec__label">よくある質問</p>
+    <h2>気になりそうなこと</h2>
+    <div class="faq">
+      <details>
+        <summary>無料でどれくらい使えますか</summary>
+        <div><p>はじめの30回は無料です。期限はないので、好きなときに使ってください。使い切ったあとも、毎月15回までは無料で使えます。残りの回数はアプリの「設定」で確認できます。</p></div>
+      </details>
+      <details>
+        <summary>日付や時間を読み違えました</summary>
+        <div><p>AIによる推定なので、読み違えることがあります。入った予定に「やっぱり20時で」と返すか、予定を開いて直してください。</p></div>
+      </details>
+      <details>
+        <summary>チャットの内容はどこかに保存されますか</summary>
+        <div><p>チャットの履歴はiPhoneの中にだけ残ります。返事を作るときにAIへ送りますが、こちらのサーバーには保存していません。くわしくは<a href="/calendarchat/privacy/">プライバシーポリシー</a>をご覧ください。</p></div>
+      </details>
+    </div>
+    <p style="margin-top:1rem"><a class="back" style="margin-top:0" href="/calendarchat/support/">ほかの質問も見る（サポート） →</a></p>
+  </section>
+
+  <section class="sec rise">
+    <p class="sec__label">アプリの情報</p>
+    <h2>チャットで予定</h2>
+    <div class="spec">
+      <dl>
+        <dt>名前</dt><dd>チャットで予定（仮）</dd>
+        <dt>提供</dt><dd>Koshiro Kawabata</dd>
+        <dt>価格</dt><dd>無料（アプリ内課金あり）</dd>
+        <dt>対応</dt><dd>iPhone・iOS 26.2以上</dd>
+        <dt>言語</dt><dd>日本語・英語</dd>
+        <dt>公開</dt><dd>準備中</dd>
+      </dl>
+    </div>
+  </section>
+
+  <div data-contact></div>
+
+  <ul class="links">
+    <li><a href="/calendarchat/support/">サポート・よくある質問</a></li>
+    <li><a href="/calendarchat/privacy/">プライバシーポリシー</a></li>
+  </ul>
+
+  <a class="back" href="/">← つくったもの</a>
+
+  <footer class="foot">
+    <ul class="foot__links">
+      <li><a href="/">つくったもの</a></li>
+      <li><a href="/chiritsumo/">ちりつも家計簿</a></li>
+      <li><a href="/zombie/">ゾンビタイピング</a></li>
+      <li><a href="/memorundesu/">メモるんです</a></li>
+    </ul>
+    <p>© thisisikemen</p>
+  </footer>
+
+</div>
+
+<script src="/assets/contact.js" defer></script>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
